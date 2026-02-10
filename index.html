@@ -3,163 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniela Cascavita - Portfolio</title>
+    <title>Portfolio - Daniela Cascavita</title>
     <link rel="stylesheet" href="styles.css">
-</head>
 <body>
     <header>
-        <div class="container header-container">
-            <div class="logo">Daniela Cascavita</div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
+        <div class="header-container">
+            <h1>Portfolio</h1>
             <nav id="mainNav">
                 <a href="#inicio">Inicio</a>
                 <a href="#proyectos">Proyectos</a>
                 <a href="#habilidades">Habilidades</a>
-                <a href="#contacto">Contacto</a>
             </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú de navegación">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
-
-    <!-- Main Content -->
+    
     <main>
-        <!-- Hero/Intro Section -->
-        <section class="hero" id="inicio">
-            <div class="container hero-container">
-                <div class="hero-text">
-                    <h1>Hola, soy Daniela Cascavita</h1>
-                    <h2>Desarrolladora Web & Diseñadora UI/UX</h2>
-                    <p>Apasionada por crear experiencias digitales atractivas y funcionales. Con más de 5 años de experiencia en desarrollo frontend y diseño de interfaces, me especializo en convertir ideas complejas en soluciones simples y elegantes.</p>
-                    <p>Mi enfoque combina creatividad, atención al detalle y las mejores prácticas de desarrollo para ofrecer productos de alta calidad que superan las expectativas.</p>
-                    <button class="btn">Ver mis proyectos</button>
-                </div>
-                <div class="profile-img">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b786d4d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Foto de perfil de Daniela Cascavita">
-                </div>
+        <!-- Introducción personal -->
+        <section id="inicio">
+            <img src="img/img.svg" alt="Perfil" class="perfil-img">
+            <h2>Daniela Cascavita</h2>
+            <p>Estudiante en Universidad Militar Nueva Granada | Ingeniería Multimedia | Deep Learning | Inteligencia Artificial | Natural Language Processing (NLP)</p>
+            <p>Estudiante de Ingeniería en Multimedia bilingüe con enfoque en inteligencia artificial, específicamente en el desarrollo de soluciones mediante deep learning y procesamiento de lenguaje natural (NLP). He participado en proyectos que integran modelos de aprendizaje automático y generación de texto, aplicando herramientas actuales del ecosistema de IA.</p>
+            <button class="accion-btn">Contactar</button>
+        </section>
+        
+        <!-- Proyectos -->
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            
+            <div class="proyectos-grid">
+                <!-- Proyecto 1 -->
+                <article class="proyecto-card">
+                    <img src="img/img.svg" alt="Deep Learning Project">
+                    <div class="proyecto-content">
+                        <h3>Deep Fakes con redes neuronales</h3>
+                        <p class="descripcion">Modelo de aprendizaje automático para detección de deepfakes, presentado en el Workshop on Engineering Applications 2025.</p>
+                        <p class="herramientas">Herramientas: Latex, Chat GPT, Gemini, Python</p>
+                        <button class="accion-btn">Ver Detalles</button>
+                    </div>
+                </article>
+                
+                <!-- Proyecto 2 -->
+                <article class="proyecto-card">
+                    <img src="img/img.svg" alt="NLP Project">
+                    <div class="proyecto-content">
+                        <h3>IA para hábitos saludables</h3>
+                        <p class="descripcion">Uso de modelos BERT para generar recomendaciones personalizadas sobre hábitos saludables y salud mental.</p>
+                        <p class="herramientas">Implementación de similitud del coseno y bases de datos estructuradas.</p>
+                        <button class="accion-btn">Ver Detalles</button>
+                    </div>
+                </article>
+                
+                <!-- Proyecto 3 -->
+                <article class="proyecto-card">
+                    <img src="img/img.svg" alt="Web Development">
+                    <div class="proyecto-content">
+                        <h3>Portfolio Web</h3>
+                        <p class="descripcion">Desarrollo de portfolio personal para mostrar proyectos y habilidades en IA y desarrollo multimedia.</p>
+                        <p class="herramientas">Tecnologías: HTML, CSS, JavaScript, Diseño Responsivo</p>
+                        <button class="accion-btn">Ver Código</button>
+                    </div>
+                </article>
             </div>
         </section>
-
-        <!-- Projects Section -->
-        <section class="projects" id="proyectos">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Mis Proyectos</h2>
-                    <p>Una selección de mis trabajos más recientes y destacados.</p>
-                </div>
-                <div class="projects-grid">
-                    <!-- Proyecto  1 -->
-                    <article class="project-card">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Proyecto 1 - E-commerce">
-                        </div>
-                        <div class="project-content">
-                            <h3>Plataforma E-commerce</h3>
-                            <p>Desarrollo completo de una plataforma de comercio electrónico con carrito de compras, integración de pagos y panel de administración.</p>
-                            <p><strong>Tecnologías:</strong> React, Node.js, MongoDB, Stripe API</p>
-                            <button class="btn">Ver detalles</button>
-                        </div>
-                    </article>
-
-                    <!-- Proyecto 2 -->
-                    <article class="project-card">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Proyecto 2 - App móvil">
-                        </div>
-                        <div class="project-content">
-                            <h3>Aplicación Móvil de Fitness</h3>
-                            <p>Diseño y desarrollo de una aplicación móvil para seguimiento de entrenamientos y nutrición con sincronización en la nube.</p>
-                            <p><strong>Tecnologías:</strong> React Native, Firebase, Redux</p>
-                            <button class="btn">Ver detalles</button>
-                        </div>
-                    </article>
-
-                    <!-- Proyecto 3 -->
-                    <article class="project-card">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Proyecto 3 - Dashboard analítico">
-                        </div>
-                        <div class="project-content">
-                            <h3>Dashboard Analítico Empresarial</h3>
-                            <p>Sistema de visualización de datos en tiempo real con gráficos interactivos para la toma de decisiones estratégicas.</p>
-                            <p><strong>Tecnologías:</strong> Vue.js, D3.js, Express, PostgreSQL</p>
-                            <button class="btn">Ver detalles</button>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seccion de habilidades -->
+        
+        <!-- Habilidades -->
         <section id="habilidades">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Mis Habilidades</h2>
-                    <p>Conocimientos técnicos y competencias profesionales.</p>
+            <h2>Habilidades</h2>
+            
+            <div class="habilidades-grid">
+                <div class="habilidad-categoria">
+                    <h3>Técnicas</h3>
+                    <p>Deep Learning • NLP • Python • Redes Neuronales • BERT • Latex</p>
                 </div>
-                <div class="skills-container">
-                    <div class="skill-category">
-                        <h3>Desarrollo Frontend</h3>
-                        <ul class="skill-list">
-                            <li>HTML5, CSS3, JavaScript (ES6+)</li>
-                            <li>React.js & Vue.js</li>
-                            <li>Responsive Web Design</li>
-                            <li>Web Performance Optimization</li>
-                            <li>Accesibilidad Web (WCAG)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>Diseño UI/UX</h3>
-                        <ul class="skill-list">
-                            <li>Diseño de Interfaces</li>
-                            <li>Prototipado (Figma, Adobe XD)</li>
-                            <li>Investigación de Usuarios</li>
-                            <li>Wireframing & User Flows</li>
-                            <li>Design Systems</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>Herramientas & Tecnologías</h3>
-                        <ul class="skill-list">
-                            <li>Git & GitHub</li>
-                            <li>Webpack, Vite</li>
-                            <li>APIs REST & GraphQL</li>
-                            <li>Testing (Jest, Cypress)</li>
-                            <li>SEO & Analytics</li>
-                        </ul>
-                    </div>
+                
+                <div class="habilidad-categoria">
+                    <h3>Idiomas</h3>
+                    <p>Español (Nativo) • Inglés B2</p>
                 </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <button class="btn">Descargar CV</button>
+                
+                <div class="habilidad-categoria">
+                    <h3>Educación</h3>
+                    <p>Ingeniería en Multimedia - UMNG (2025) • Google AI Essentials - Coursera (2025)</p>
                 </div>
             </div>
+            
+            <button class="accion-btn">Descargar CV</button>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer id="contacto">
-        <div class="container footer-content">
-            <h2 style="color: white; margin-bottom: 20px;">Contacto</h2>
-            <p>¿Interesado en trabajar juntos o tienes un proyecto en mente? ¡Hablemos!</p>
-            
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-behance"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-            </div>
-            
-            <div style="margin-top: 30px;">
-                <button class="btn" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);">Enviar mensaje</button>
-            </div>
-            
-            <div class="copyright">
-                &copy; 2026 Daniela Cascavita. Todos los derechos reservados.
-            </div>
-        </div>
+    
+    <footer>
+        <p>Contacto: danielacascavita2003@gmail.com | +57 3223626267</p>
+        <p>© 2025 Daniela Cascavita. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
