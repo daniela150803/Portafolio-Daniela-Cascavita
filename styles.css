@@ -1,0 +1,350 @@
+/* Estilos generales - Blanco y Negro */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #000000;
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border: 1px solid #333333;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+/* Navegación para desktop */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: #333333;
+    border: 1px solid #000000;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    background-color: #666666;
+    color: #ffffff;
+}
+
+/* Botón menú hamburguesa (oculto en desktop) */
+.menu-toggle {
+    display: none; /* Oculto en desktop por defecto */
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001; /* Asegurar que esté sobre otros elementos */
+}
+
+.menu-toggle:hover {
+    color: #cccccc;
+}
+
+/* Secciones principales */
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: #000000;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: normal;
+    text-align: center;
+}
+
+h3 {
+    color: #000000;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+/* Sección de perfil */
+.perfil-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 0;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    border: 3px solid #000000;
+    filter: grayscale(100%);
+}
+
+#inicio {
+    text-align: center;
+}
+
+#inicio p {
+    margin-bottom: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333333;
+}
+
+/* Sección de proyectos - Tarjetas */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.proyecto-card {
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.proyecto-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.proyecto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #cccccc;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.proyecto-card:hover img {
+    filter: grayscale(0%);
+}
+
+.proyecto-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.proyecto-content h3 {
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.descripcion {
+    color: #333333;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.herramientas {
+    color: #666666;
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+/* Sección de habilidades */
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.habilidad-categoria {
+    padding: 20px;
+    border: 1px solid #cccccc;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.habilidad-categoria h3 {
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.habilidad-categoria p {
+    color: #333333;
+    line-height: 1.7;
+}
+
+/* Botones */
+.accion-btn {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: normal;
+    display: inline-block;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.accion-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    border-top: 2px solid #333333;
+}
+
+footer p {
+    margin-bottom: 10px;
+    color: #cccccc;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+    .proyectos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .habilidades-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Móvil */
+@media (max-width: 767px) {
+    body {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 10px 15px;
+        position: relative;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+        z-index: 1;
+    }
+
+    .menu-toggle {
+        display: block !important; /* Forzar que se muestre */
+        position: relative;
+        z-index: 1001;
+    }
+
+    nav {
+        display: none !important; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        flex-direction: column;
+        padding: 0;
+        z-index: 1000;
+        border-top: 1px solid #333333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+    
+    nav.active {
+        display: flex !important;
+        max-height: 300px; 
+    }
+    
+    nav a {
+        padding: 15px 20px;
+        border-bottom: 1px solid #333333;
+        border-radius: 0;
+        text-align: left;
+        background-color: #000000;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+    
+    nav.active a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    nav a:last-child {
+        border-bottom: none;
+    }
+    
+    nav a:hover {
+        background-color: #333333;
+    }
+    
+    nav.active a:nth-child(1) { transition-delay: 0.1s; }
+    nav.active a:nth-child(2) { transition-delay: 0.2s; }
+    nav.active a:nth-child(3) { transition-delay: 0.3s; }
+    
+    section {
+        padding: 20px;
+    }
+    
+    .perfil-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .habilidades-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (min-width: 1024px) {
+    .proyectos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
