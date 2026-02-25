@@ -1,103 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Daniela Cascavita</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Daniela Cascavita</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1>Portfolio</h1>
-            <nav id="mainNav">
-                <a href="#inicio">Inicio</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#habilidades">Habilidades</a>
-            </nav>
-            <button class="menu-toggle" id="menuToggle" aria-label="Menú de navegación">
-                <i class="fas fa-bars"></i>
-            </button>
+  <header class="site-header">
+    <div class="header-container">
+      <h1 class="brand">Portfolio</h1>
+      <nav id="mainNav" class="main-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú de navegación">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Introducción personal -->
+    <section id="inicio" class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <span class="availability">Disponible para proyectos</span>
+          <h2 class="hero-name">Daniela Cascavita</h2>
+          <p class="hero-sub">Estudiante en Universidad Militar Nueva Granada | Ingeniería Multimedia</p>
+
+          <p class="hero-desc">
+            Deep Learning • Inteligencia Artificial • Natural Language Processing (NLP)
+          </p>
+
+          <p class="hero-about">
+            Estudiante de Ingeniería en Multimedia bilingüe con enfoque en inteligencia artificial,
+            específicamente en el desarrollo de soluciones mediante deep learning y procesamiento de lenguaje natural (NLP).
+            He participado en proyectos que integran modelos de aprendizaje automático y generación de texto, aplicando herramientas actuales del ecosistema de IA.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#proyectos">Ver Proyectos</a>
+            <button class="btn btn-ghost">Contactar</button>
+          </div>
         </div>
-    </header>
-    
-    <main>
-        <!-- Introducción personal -->
-        <section id="inicio">
-            <img src="img/img.svg" alt="Perfil" class="perfil-img">
-            <h2>Daniela Cascavita</h2>
-            <p>Estudiante en Universidad Militar Nueva Granada | Ingeniería Multimedia | Deep Learning | Inteligencia Artificial | Natural Language Processing (NLP)</p>
-            <p>Estudiante de Ingeniería en Multimedia bilingüe con enfoque en inteligencia artificial, específicamente en el desarrollo de soluciones mediante deep learning y procesamiento de lenguaje natural (NLP). He participado en proyectos que integran modelos de aprendizaje automático y generación de texto, aplicando herramientas actuales del ecosistema de IA.</p>
-            <button class="accion-btn">Contactar</button>
-        </section>
-        
-        <!-- Proyectos -->
-        <section id="proyectos">
-            <h2>Proyectos</h2>
-            
-            <div class="proyectos-grid">
-                <!-- Proyecto 1 -->
-                <article class="proyecto-card">
-                    <img src="img/img.svg" alt="Deep Learning Project">
-                    <div class="proyecto-content">
-                        <h3>Deep Fakes con redes neuronales</h3>
-                        <p class="descripcion">Modelo de aprendizaje automático para detección de deepfakes, presentado en el Workshop on Engineering Applications 2025.</p>
-                        <p class="herramientas">Herramientas: Latex, Chat GPT, Gemini, Python</p>
-                        <button class="accion-btn">Ver Detalles</button>
-                    </div>
-                </article>
-                
-                <!-- Proyecto 2 -->
-                <article class="proyecto-card">
-                    <img src="img/img.svg" alt="NLP Project">
-                    <div class="proyecto-content">
-                        <h3>IA para hábitos saludables</h3>
-                        <p class="descripcion">Uso de modelos BERT para generar recomendaciones personalizadas sobre hábitos saludables y salud mental.</p>
-                        <p class="herramientas">Implementación de similitud del coseno y bases de datos estructuradas.</p>
-                        <button class="accion-btn">Ver Detalles</button>
-                    </div>
-                </article>
-                
-                <!-- Proyecto 3 -->
-                <article class="proyecto-card">
-                    <img src="img/img.svg" alt="Web Development">
-                    <div class="proyecto-content">
-                        <h3>Portfolio Web</h3>
-                        <p class="descripcion">Desarrollo de portfolio personal para mostrar proyectos y habilidades en IA y desarrollo multimedia.</p>
-                        <p class="herramientas">Tecnologías: HTML, CSS, JavaScript, Diseño Responsivo</p>
-                        <button class="accion-btn">Ver Código</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-        
-        <!-- Habilidades -->
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            
-            <div class="habilidades-grid">
-                <div class="habilidad-categoria">
-                    <h3>Técnicas</h3>
-                    <p>Deep Learning • NLP • Python • Redes Neuronales • BERT • Latex</p>
-                </div>
-                
-                <div class="habilidad-categoria">
-                    <h3>Idiomas</h3>
-                    <p>Español (Nativo) • Inglés B2</p>
-                </div>
-                
-                <div class="habilidad-categoria">
-                    <h3>Educación</h3>
-                    <p>Ingeniería en Multimedia - UMNG (2025) • Google AI Essentials - Coursera (2025)</p>
-                </div>
-            </div>
-            
-            <button class="accion-btn">Descargar CV</button>
-        </section>
-    </main>
-    
-    <footer>
-        <p>Contacto: danielacascavita2003@gmail.com | +57 3223626267</p>
-        <p>© 2025 Daniela Cascavita. Todos los derechos reservados.</p>
-    </footer>
+
+        <div class="hero-right">
+          <!-- Use a portrait image here (replace img/profile.jpg with your photo) -->
+          <div class="profile-card">
+            <img src="img/img.svg" alt="Perfil" class="perfil-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="section projects-section">
+      <h2 class="section-title">Proyectos</h2>
+      <p class="section-sub">Proyectos destacados en IA y desarrollo multimedia</p>
+
+      <div class="proyectos-grid">
+        <article class="proyecto-card">
+          <figure class="thumb">
+            <img src="img/img.svg" alt="Deep Learning Project">
+          </figure>
+          <div class="proyecto-content">
+            <span class="tag">Deep Learning</span>
+            <h3>Deep Fakes con redes neuronales</h3>
+            <p class="descripcion">Modelo de aprendizaje automático para detección de deepfakes, presentado en el Workshop on Engineering Applications 2025.</p>
+            <p class="herramientas">Latex • Chat GPT • Gemini • Python</p>
+            <a class="btn btn-sm btn-outline" href="#">Ver Detalles →</a>
+          </div>
+        </article>
+
+        <article class="proyecto-dos">
+          <figure class="thumb">
+            <img src="img/img.svg" alt="NLP Project">
+          </figure>
+          <div class="proyecto-content">
+            <span class="tag">NLP</span>
+            <h3>IA para hábitos saludables</h3>
+            <p class="descripcion">Uso de modelos BERT para generar recomendaciones personalizadas sobre hábitos saludables y salud mental.</p>
+            <p class="herramientas">Similitud del coseno • Bases de datos estructuradas</p>
+            <a class="btn btn-sm btn-outline" href="#">Ver Detalles →</a>
+          </div>
+        </article>
+
+        <article class="proyecto-card">
+          <figure class="thumb">
+            <img src="img/img.svg" alt="Web Development">
+          </figure>
+          <div class="proyecto-content">
+            <span class="tag">Web Development</span>
+            <h3>Portfolio Web</h3>
+            <p class="descripcion">Desarrollo de portfolio personal para mostrar proyectos y habilidades en IA y desarrollo multimedia.</p>
+            <p class="herramientas">HTML • CSS • JavaScript • Diseño Responsivo</p>
+            <a class="btn btn-sm btn-outline" href="#">Ver Código →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="section skills-section">
+      <h2 class="section-title">Habilidades</h2>
+      <p class="section-sub">Competencias técnicas y profesionales</p>
+
+      <div class="habilidades-grid">
+        <div class="habilidad-categoria card">
+          <h3>Técnicas</h3>
+          <p>Deep Learning • NLP • Python • Redes Neuronales • BERT • Latex</p>
+        </div>
+        <div class="habilidad-categoria card">
+          <h3>Idiomas</h3>
+          <p>Español (Nativo) • Inglés B2</p>
+        </div>
+        <div class="habilidad-categoria card">
+          <h3>Educación</h3>
+          <p>Ingeniería en Multimedia - UMNG (2025) • Google AI Essentials - Coursera (2025)</p>
+        </div>
+      </div>
+
+      <div class="center">
+        <button class="btn btn-primary">Descargar CV</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>¿Trabajamos juntos? ¿Tienes un proyecto en mente? ¡Hablemos!</p>
+      <div class="contact-row">
+        <a class="contact-pill" href="mailto:danielacascavita2003@gmail.com">danielacascavita2003@gmail.com</a>
+        <a class="contact-pill" href="tel:+573223626267">+57 3223626267</a>
+        <a class="contact-pill" href="#">LinkedIn</a>
+      </div>
+      <p class="copyright">© 2025 Daniela Cascavita. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Minimal JS to toggle mobile nav (keep) -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle?.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
