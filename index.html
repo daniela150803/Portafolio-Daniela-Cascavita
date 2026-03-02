@@ -25,18 +25,22 @@
       <div class="hero-inner">
         <div class="hero-left">
           <span class="availability">Disponible para proyectos</span>
-          <h2 class="hero-name">Daniela Cascavita</h2>
+          <h2 class="hero-name">Daniela<br/>Cascavita</h2>
           <p class="hero-sub">Estudiante en Universidad Militar Nueva Granada | Ingeniería Multimedia</p>
 
-          <p class="hero-desc">
-            Deep Learning • Inteligencia Artificial • Natural Language Processing (NLP)
-          </p>
+          <div class="pills">
+            <button class="pill-btn">Deep Learning</button>
+            <button class="pill-btn">Inteligencia Artificial</button>
+            <button class="pill-btn">Natural Language Processing</button>
+          </div>
 
-          <p class="hero-about">
-            Estudiante de Ingeniería en Multimedia bilingüe con enfoque en inteligencia artificial,
-            específicamente en el desarrollo de soluciones mediante deep learning y procesamiento de lenguaje natural (NLP).
-            He participado en proyectos que integran modelos de aprendizaje automático y generación de texto, aplicando herramientas actuales del ecosistema de IA.
-          </p>
+          <div class="about-card">
+            <p class="hero-about">
+              Estudiante de Ingeniería en Multimedia bilingüe con enfoque en inteligencia artificial,
+              específicamente en el desarrollo de soluciones mediante deep learning y procesamiento de lenguaje natural (NLP).
+              He participado en proyectos que integran modelos de aprendizaje automático y generación de texto, aplicando herramientas actuales del ecosistema de IA.
+            </p>
+          </div>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#proyectos">Ver Proyectos</a>
@@ -57,6 +61,15 @@
     <section id="proyectos" class="section projects-section">
       <h2 class="section-title">Proyectos</h2>
       <p class="section-sub">Proyectos destacados en IA y desarrollo multimedia</p>
+
+      <!-- FILTRO: va después del título "Proyectos" -->
+      <div class="projects-filter">
+        <div class="filter-pill">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="programming"><span class="icon-code">&lt;/&gt;</span> Programación</button>
+          <button class="filter-btn" data-filter="design"><span class="icon-palette">🎨</span> Diseño</button>
+        </div>
+      </div>
 
       <div class="proyectos-grid">
         <article class="proyecto-card">
@@ -101,38 +114,78 @@
     </section>
 
     <!-- Habilidades -->
-    <section id="habilidades" class="section skills-section">
-      <h2 class="section-title">Habilidades</h2>
-      <p class="section-sub">Competencias técnicas y profesionales</p>
+<section id="habilidades" class="section skills-section">
+  <h2 class="section-title">Habilidades</h2>
+  <p class="section-sub">Competencias técnicas y profesionales</p>
 
-      <div class="habilidades-grid">
-        <div class="habilidad-categoria card">
-          <h3>Técnicas</h3>
-          <p>Deep Learning • NLP • Python • Redes Neuronales • BERT • Latex</p>
-        </div>
-        <div class="habilidad-categoria card">
-          <h3>Idiomas</h3>
-          <p>Español (Nativo) • Inglés B2</p>
-        </div>
-        <div class="habilidad-categoria card">
-          <h3>Educación</h3>
-          <p>Ingeniería en Multimedia - UMNG (2025) • Google AI Essentials - Coursera (2025)</p>
-        </div>
+  <div class="habilidades-grid">
+    <!-- Técnicas -->
+    <div class="habilidad-categoria card">
+      <div class="card-header">
+        <h3>Técnicas</h3>
+        <span class="card-icon">&lt;/&gt;</span>
       </div>
+      <div class="tags-container">
+        <span class="skill-tag">Deep Learning</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Redes Neuronales</span>
+        <span class="skill-tag">BERT</span>
+        <span class="skill-tag">Latex</span>
+      </div>
+    </div>
 
-      <div class="center">
-        <button class="btn btn-primary">Descargar CV</button>
+    <!-- Idiomas -->
+    <div class="habilidad-categoria card">
+      <div class="card-header">
+        <h3>Idiomas</h3>
+        <span class="card-icon">文<sub>A</sub></span>
       </div>
-    </section>
-  </main>
+      <ul class="skill-list">
+        <li><span class="dot"></span> Español (Nativo)</li>
+        <li><span class="dot"></span> Inglés B2</li>
+      </ul>
+    </div>
+
+    <!-- Educación -->
+    <div class="habilidad-categoria card">
+      <div class="card-header">
+        <h3>Educación</h3>
+        <span class="card-icon">🎓</span>
+      </div>
+      <div class="edu-item">
+        <strong>Ingeniería en Multimedia</strong>
+        <p>UMNG (2025)</p>
+      </div>
+      <div class="edu-item">
+        <strong>Google AI Essentials</strong>
+        <p>Coursera (2025)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="center">
+    <button class="btn btn-primary">Descargar CV</button>
+  </div>
+</section>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>¿Trabajamos juntos? ¿Tienes un proyecto en mente? ¡Hablemos!</p>
+      <h2 class="footer-title">¿Trabajamos juntos?</h2>
+      <p class="footer-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
       <div class="contact-row">
-        <a class="contact-pill" href="mailto:danielacascavita2003@gmail.com">danielacascavita2003@gmail.com</a>
-        <a class="contact-pill" href="tel:+573223626267">+57 3223626267</a>
-        <a class="contact-pill" href="#">LinkedIn</a>
+        <a class="contact-pill email" href="mailto:danielacascavita2003@gmail.com">
+          <span class="icon">✉</span>
+          <span class="text">danielacascavita2003@gmail.com</span>
+        </a>
+        <a class="contact-pill phone" href="tel:+573223626267">
+          <span class="icon">📞</span>
+          <span class="text">+57 3223626267</span>
+        </a>
+        <a class="contact-pill linkedin" href="#">
+          <span class="icon">in</span>
+          <span class="text">LinkedIn</span>
+        </a>
       </div>
       <p class="copyright">© 2025 Daniela Cascavita. Todos los derechos reservados.</p>
     </div>
@@ -146,5 +199,62 @@
       mainNav.classList.toggle('active');
     });
   </script>
+
+  <!-- JS para el filtro de proyectos (no modifica tu HTML: solo oculta/mostrar) -->
+  <script>
+    (function() {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const items = Array.from(document.querySelectorAll('.proyectos-grid > article'));
+      const grid = document.querySelector('.proyectos-grid');
+
+      function setActive(button) {
+        buttons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+      }
+
+      async function applyFilter(filterName) {
+        const progKeywords = ['python','javascript','html','css','deep learning','bert','nlp','web development','latex'];
+        const designKeywords = ['diseño','design','ui','ux','figma','illustrator','photoshop','ilustración','brand','identidad','branding'];
+
+        // Fade out all items
+        grid.style.opacity = '0';
+        await new Promise(r => setTimeout(r, 200));
+
+        // Apply filter logic
+        items.forEach(it => {
+          const txt = (it.textContent || '').toLowerCase();
+          let shouldShow = true;
+          
+          if (filterName === 'programming') {
+            shouldShow = progKeywords.some(k => txt.includes(k));
+          } else if (filterName === 'design') {
+            shouldShow = designKeywords.some(k => txt.includes(k));
+          }
+          
+          it.style.display = shouldShow ? '' : 'none';
+        });
+
+        // Fade back in
+        grid.style.opacity = '1';
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const filter = this.dataset.filter;
+          setActive(this);
+          if (filter === 'all') {
+            applyFilter('all');
+          } else if (filter === 'programming') {
+            applyFilter('programming');
+          } else if (filter === 'design') {
+            applyFilter('design');
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- Modern effects and interactions -->
+  <script src="effects.js"></script>
 </body>
 </html>
