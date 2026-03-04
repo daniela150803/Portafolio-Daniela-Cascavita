@@ -1,260 +1,464 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio - Daniela Cascavita</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="header-container">
-      <h1 class="brand">Portfolio</h1>
-      <nav id="mainNav" class="main-nav">
-        <a href="#inicio">Inicio</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#habilidades">Habilidades</a>
-      </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menú de navegación">☰</button>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero / Introducción personal -->
-    <section id="inicio" class="hero">
-      <div class="hero-inner">
-        <div class="hero-left">
-          <span class="availability">Disponible para proyectos</span>
-          <h2 class="hero-name">Daniela<br/>Cascavita</h2>
-          <p class="hero-sub">Estudiante en Universidad Militar Nueva Granada | Ingeniería Multimedia</p>
-
-          <div class="pills">
-            <button class="pill-btn">Deep Learning</button>
-            <button class="pill-btn">Inteligencia Artificial</button>
-            <button class="pill-btn">Natural Language Processing</button>
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Portafolio - Daniela Cascavita</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <h1 class="brand">Portfolio</h1>
+        <nav id="mainNav" class="main-nav">
+          <a href="#inicio">Inicio</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#habilidades">Habilidades</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú de navegación">☰</button>
+      </div>
+    </header>
+  
+    <main>
+      <!-- Hero / Introducción personal -->
+      <section id="inicio" class="hero">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <span class="availability">Disponible para proyectos</span>
+            <h2 class="hero-name">Daniela<br/>Cascavita</h2>
+            <p class="hero-sub">Estudiante en Universidad Militar Nueva Granada | Ingeniería Multimedia</p>
+  
+            <div class="pills">
+              <button class="pill-btn">Deep Learning</button>
+              <button class="pill-btn">Inteligencia Artificial</button>
+              <button class="pill-btn">Natural Language Processing</button>
+            </div>
+  
+            <div class="about-card">
+              <p class="hero-about">
+                Estudiante de Ingeniería en Multimedia bilingüe con enfoque en inteligencia artificial,
+                específicamente en el desarrollo de soluciones mediante deep learning y procesamiento de lenguaje natural (NLP).
+                He participado en proyectos que integran modelos de aprendizaje automático y generación de texto, aplicando herramientas actuales del ecosistema de IA.
+              </p>
+            </div>
+  
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#proyectos">Ver Proyectos</a>
+              <button class="btn btn-ghost">Contactar</button>
+            </div>
           </div>
-
-          <div class="about-card">
-            <p class="hero-about">
-              Estudiante de Ingeniería en Multimedia bilingüe con enfoque en inteligencia artificial,
-              específicamente en el desarrollo de soluciones mediante deep learning y procesamiento de lenguaje natural (NLP).
-              He participado en proyectos que integran modelos de aprendizaje automático y generación de texto, aplicando herramientas actuales del ecosistema de IA.
-            </p>
-          </div>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#proyectos">Ver Proyectos</a>
-            <button class="btn btn-ghost">Contactar</button>
+  
+          <div class="hero-right">
+            <!-- Use a portrait image here (replace img/profile.jpg with your photo) -->
+            <div class="profile-card">
+              <img src="img\perfil.jpeg" alt="Perfil" class="perfil-img" />
+            </div>
           </div>
         </div>
-
-        <div class="hero-right">
-          <!-- Use a portrait image here (replace img/profile.jpg with your photo) -->
-          <div class="profile-card">
-            <img src="img/img.svg" alt="Perfil" class="perfil-img" />
+      </section>
+  
+      <!-- Proyectos -->
+      <section id="proyectos" class="section projects-section">
+        <h2 class="section-title">Proyectos</h2>
+        <p class="section-sub">Proyectos destacados en IA y desarrollo multimedia</p>
+  
+        <!-- FILTRO: va después del título "Proyectos" -->
+        <div class="projects-filter">
+          <div class="filter-pill">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="programming"><span class="icon-code">&lt;/&gt;</span> Programación</button>
+            <button class="filter-btn" data-filter="design"><span class="icon-palette">🎨</span> Diseño</button>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Proyectos -->
-    <section id="proyectos" class="section projects-section">
-      <h2 class="section-title">Proyectos</h2>
-      <p class="section-sub">Proyectos destacados en IA y desarrollo multimedia</p>
-
-      <!-- FILTRO: va después del título "Proyectos" -->
-      <div class="projects-filter">
-        <div class="filter-pill">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="programming"><span class="icon-code">&lt;/&gt;</span> Programación</button>
-          <button class="filter-btn" data-filter="design"><span class="icon-palette">🎨</span> Diseño</button>
-        </div>
-      </div>
-
-      <div class="proyectos-grid">
-        <article class="proyecto-card">
-          <figure class="thumb">
-            <img src="img/img.svg" alt="Deep Learning Project">
-          </figure>
-          <div class="proyecto-content">
-            <span class="tag">Deep Learning</span>
-            <h3>Deep Fakes con redes neuronales</h3>
-            <p class="descripcion">Modelo de aprendizaje automático para detección de deepfakes, presentado en el Workshop on Engineering Applications 2025.</p>
-            <p class="herramientas">Latex • Chat GPT • Gemini • Python</p>
-            <a class="btn btn-sm btn-outline" href="#">Ver Detalles →</a>
-          </div>
-        </article>
-
-        <article class="proyecto-dos">
-          <figure class="thumb">
-            <img src="img/img.svg" alt="NLP Project">
-          </figure>
-          <div class="proyecto-content">
-            <span class="tag">NLP</span>
-            <h3>IA para hábitos saludables</h3>
-            <p class="descripcion">Uso de modelos BERT para generar recomendaciones personalizadas sobre hábitos saludables y salud mental.</p>
-            <p class="herramientas">Similitud del coseno • Bases de datos estructuradas</p>
-            <a class="btn btn-sm btn-outline" href="#">Ver Detalles →</a>
-          </div>
-        </article>
-
-        <article class="proyecto-card">
-          <figure class="thumb">
-            <img src="img/img.svg" alt="Web Development">
-          </figure>
-          <div class="proyecto-content">
-            <span class="tag">Web Development</span>
-            <h3>Portfolio Web</h3>
-            <p class="descripcion">Desarrollo de portfolio personal para mostrar proyectos y habilidades en IA y desarrollo multimedia.</p>
-            <p class="herramientas">HTML • CSS • JavaScript • Diseño Responsivo</p>
-            <a class="btn btn-sm btn-outline" href="#">Ver Código →</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Habilidades -->
-<section id="habilidades" class="section skills-section">
-  <h2 class="section-title">Habilidades</h2>
-  <p class="section-sub">Competencias técnicas y profesionales</p>
-
-  <div class="habilidades-grid">
-    <!-- Técnicas -->
-    <div class="habilidad-categoria card">
-      <div class="card-header">
-        <h3>Técnicas</h3>
-        <span class="card-icon">&lt;/&gt;</span>
-      </div>
-      <div class="tags-container">
-        <span class="skill-tag">Deep Learning</span>
-        <span class="skill-tag">NLP</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Redes Neuronales</span>
-        <span class="skill-tag">BERT</span>
-        <span class="skill-tag">Latex</span>
-      </div>
-    </div>
-
-    <!-- Idiomas -->
-    <div class="habilidad-categoria card">
-      <div class="card-header">
-        <h3>Idiomas</h3>
-        <span class="card-icon">文<sub>A</sub></span>
-      </div>
-      <ul class="skill-list">
-        <li><span class="dot"></span> Español (Nativo)</li>
-        <li><span class="dot"></span> Inglés B2</li>
-      </ul>
-    </div>
-
-    <!-- Educación -->
-    <div class="habilidad-categoria card">
-      <div class="card-header">
-        <h3>Educación</h3>
-        <span class="card-icon">🎓</span>
-      </div>
-      <div class="edu-item">
-        <strong>Ingeniería en Multimedia</strong>
-        <p>UMNG (2025)</p>
-      </div>
-      <div class="edu-item">
-        <strong>Google AI Essentials</strong>
-        <p>Coursera (2025)</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="center">
-    <button class="btn btn-primary">Descargar CV</button>
-  </div>
-</section>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <h2 class="footer-title">¿Trabajamos juntos?</h2>
-      <p class="footer-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
-      <div class="contact-row">
-        <a class="contact-pill email" href="mailto:danielacascavita2003@gmail.com">
-          <span class="icon">✉</span>
-          <span class="text">danielacascavita2003@gmail.com</span>
-        </a>
-        <a class="contact-pill phone" href="tel:+573223626267">
-          <span class="icon">📞</span>
-          <span class="text">+57 3223626267</span>
-        </a>
-        <a class="contact-pill linkedin" href="#">
-          <span class="icon">in</span>
-          <span class="text">LinkedIn</span>
-        </a>
-      </div>
-      <p class="copyright">© 2025 Daniela Cascavita. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <!-- Minimal JS to toggle mobile nav (keep) -->
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mainNav = document.getElementById('mainNav');
-    menuToggle?.addEventListener('click', () => {
-      mainNav.classList.toggle('active');
-    });
-  </script>
-
-  <!-- JS para el filtro de proyectos (no modifica tu HTML: solo oculta/mostrar) -->
-  <script>
-    (function() {
-      const buttons = document.querySelectorAll('.filter-btn');
-      const items = Array.from(document.querySelectorAll('.proyectos-grid > article'));
-      const grid = document.querySelector('.proyectos-grid');
-
-      function setActive(button) {
-        buttons.forEach(b => b.classList.remove('active'));
-        button.classList.add('active');
-      }
-
-      async function applyFilter(filterName) {
-        const progKeywords = ['python','javascript','html','css','deep learning','bert','nlp','web development','latex'];
-        const designKeywords = ['diseño','design','ui','ux','figma','illustrator','photoshop','ilustración','brand','identidad','branding'];
-
-        // Fade out all items
-        grid.style.opacity = '0';
-        await new Promise(r => setTimeout(r, 200));
-
-        // Apply filter logic
-        items.forEach(it => {
-          const txt = (it.textContent || '').toLowerCase();
-          let shouldShow = true;
+  
+        <div class="proyectos-grid">
+          <article class="proyecto-group" data-index="0" data-category="programming">
+            <div class="proyecto-card">
+              <div class="proyecto-grid">
+                <!-- Image Section -->
+                <div class="proyecto-image-section">
+                  <div class="proyecto-image-container">
+                    <img src="img/deep.jpg" alt="Deep Learning Project" class="proyecto-img">
+                    <div class="proyecto-gradient-overlay overlay-left"></div>
+                    
+                    <!-- Badge -->
+                    <div class="proyecto-badge">
+                      <span class="badge-content">
+                        <svg class="badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        Deep Learning
+                      </span>
+                    </div>
+                    
+                    <!-- Category Indicator -->
+                    <div class="proyecto-category-indicator development">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Content Section -->
+                <div class="proyecto-content-section">
+                  <div class="decorative-blob development"></div>
+                  
+                  <h3 class="proyecto-title">Deep Fakes con redes neuronales</h3>
+                  <p class="proyecto-descripcion">Modelo de aprendizaje automático para detección de deepfakes, presentado en el Workshop on Engineering Applications 2025.</p>
+  
+                  <!-- Tech Stack Pills -->
+                  <div class="tech-stack">
+                    <span class="tech-pill">Latex</span>
+                    <span class="tech-pill">Chat GPT</span>
+                    <span class="tech-pill">Gemini</span>
+                    <span class="tech-pill">Python</span>
+                  </div>
+  
+                  <!-- Code Snippet (hidden by default) -->
+                  <div class="code-snippet-container">
+                    <div class="code-snippet-box">
+                      <div class="code-header">
+                        <div class="code-dots">
+                          <div class="dot red"></div>
+                          <div class="dot yellow"></div>
+                          <div class="dot green"></div>
+                        </div>
+                        <span class="code-filename">deepfake_detector.py</span>
+                      </div>
+                      <div class="code-content">
+                        <pre><code>import tensorflow as tf
+  from keras.models import Sequential
+  
+  model = Sequential([
+    Dense(128, activation='relu'),
+    Dense(64, activation='relu'),
+    Dense(1, activation='sigmoid')
+  ])
+  
+  model.compile(optimizer='adam',
+    loss='binary_crossentropy')</code></pre>
+                      </div>
+                    </div>
+                    <button class="expand-code-btn" type="button">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                      Ver código completo
+                    </button>
+                  </div>
+  
+                  <!-- Action Button -->
+                  <button class="proyecto-btn development">
+                    <span>Ver Detalles</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+  
+          <article class="proyecto-group" data-index="1" data-category="programming">
+            <div class="proyecto-card">
+              <div class="proyecto-grid">
+                <div class="proyecto-image-section">
+                  <div class="proyecto-image-container">
+                    <img src="img/npl.jpg" alt="NLP Project" class="proyecto-img">
+                    <div class="proyecto-gradient-overlay overlay-left"></div>
+                    
+                    <div class="proyecto-badge">
+                      <span class="badge-content">
+                        <svg class="badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+                        NLP
+                      </span>
+                    </div>
+                    
+                    <div class="proyecto-category-indicator development">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                    </div>
+                  </div>
+                </div>
           
-          if (filterName === 'programming') {
-            shouldShow = progKeywords.some(k => txt.includes(k));
-          } else if (filterName === 'design') {
-            shouldShow = designKeywords.some(k => txt.includes(k));
-          }
+                <div class="proyecto-content-section">
+                  <div class="decorative-blob development"></div>
+                  
+                  <h3 class="proyecto-title">IA para hábitos saludables</h3>
+                  <p class="proyecto-descripcion">Uso de modelos BERT para generar recomendaciones personalizadas sobre hábitos saludables y salud mental.</p>
           
-          it.style.display = shouldShow ? '' : 'none';
+                  <div class="tech-stack">
+                    <span class="tech-pill">Similitud del coseno</span>
+                    <span class="tech-pill">BERT</span>
+                  </div>
+          
+                  <button class="proyecto-btn development">
+                    <span>Ver Detalles</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+  
+          <article class="proyecto-group" data-index="2" data-category="programming">
+            <div class="proyecto-card">
+              <div class="proyecto-grid">
+                <!-- Image Section -->
+                <div class="proyecto-image-section">
+                  <div class="proyecto-image-container">
+                    <img src="img/web.jpg" alt="Web Development" class="proyecto-img">
+                    <div class="proyecto-gradient-overlay overlay-left"></div>
+                    
+                    <!-- Badge -->
+                    <div class="proyecto-badge">
+                      <span class="badge-content">
+                        <svg class="badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        Web Dev
+                      </span>
+                    </div>
+                    
+                    <!-- Category Indicator -->
+                    <div class="proyecto-category-indicator development">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Content Section -->
+                <div class="proyecto-content-section">
+                  <div class="decorative-blob development"></div>
+                  
+                  <h3 class="proyecto-title">Portfolio Web</h3>
+                  <p class="proyecto-descripcion">Desarrollo de portfolio personal para mostrar proyectos y habilidades en IA y desarrollo multimedia.</p>
+  
+                  <!-- Tech Stack Pills -->
+                  <div class="tech-stack">
+                    <span class="tech-pill">HTML</span>
+                    <span class="tech-pill">CSS</span>
+                    <span class="tech-pill">JavaScript</span>
+                    <span class="tech-pill">Responsive</span>
+                  </div>
+  
+                  <!-- Action Button -->
+                  <button class="proyecto-btn development">
+                    <span>Ver Código</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+         <article class="proyecto-group" data-index="3" data-category="design">
+            <div class="proyecto-card">
+              <div class="proyecto-grid">
+
+                <!-- Image Section -->
+                <div class="proyecto-image-section">
+                  <div class="proyecto-image-container">
+                    <img src="img/video.jpg" alt="Animación 3D" class="proyecto-img">
+                    <div class="proyecto-gradient-overlay overlay-left"></div>
+
+                    <!-- Badge -->
+                    <div class="proyecto-badge">
+                      <span class="badge-content">
+                        <svg class="badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                        Animación 3D
+                      </span>
+                    </div>
+
+                    <!-- Category Indicator -->
+                    <div class="proyecto-category-indicator development">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <path d="M12 1v6m0 6v6m5.196-15.196L13.732 7.268m-3.464 3.464L6.804 14.196m12.392 0l-3.464-3.464M7.268 13.732 3.804 17.196"></path>
+                    </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Content Section -->
+                <div class="proyecto-content-section">
+                  <div class="decorative-blob development"></div>
+
+                  <h3 class="proyecto-title">Proyecto de Animación 3D</h3>
+                  <p class="proyecto-descripcion">
+                    Creación de una animación 3D que muestra el proceso de modelado, texturizado, iluminación y renderizado de una escena digital.
+                  </p>
+
+                  <!-- Tech Stack Pills -->
+                  <div class="tech-stack">
+                    <span class="tech-pill">Blender</span>
+                    <span class="tech-pill">Modelado 3D</span>
+                    <span class="tech-pill">Texturizado</span>
+                    <span class="tech-pill">Render</span>
+                    <span class="tech-pill">Animación</span>
+                  </div>
+
+                  <!-- Action Button -->
+                  <button class="proyecto-btn development">
+                    <span>Ver Animación</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </article>
+        </div>
+        
+      </section>
+  
+      <!-- Habilidades -->
+  <section id="habilidades">
+    <div class="decor-blur blur-1"></div>
+    <div class="decor-blur blur-2"></div>
+  
+    <div class="container">
+      <div class="skills-header">
+        <h2>Habilidades</h2>
+        <p style="color: rgba(255,255,255,0.7)">
+          Competencias <strong style="color: #93c5fd">técnicas</strong> y <strong style="color: #c084fc">profesionales</strong>
+        </p>
+      </div>
+  
+      <div class="habilidades-grid">
+        <div class="habilidad-categoria card">
+          <div class="card-header">
+            <h3>Técnicas</h3>
+            <span class="card-icon">&lt;/&gt;</span>
+          </div>
+          <div class="tags-container">
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Redes Neuronales</span>
+            <span class="skill-tag">BERT</span>
+            <span class="skill-tag">Latex</span>
+          </div>
+        </div>
+  
+        <div class="habilidad-categoria card">
+          <div class="card-header">
+            <h3>Idiomas</h3>
+            <span class="card-icon">文<sub>A</sub></span>
+          </div>
+          <div class="info-item">
+            <div class="dot"></div>
+            <span>Inglés <strong style="color:#f472b6">B2</strong></span>
+          </div>
+        </div>
+  
+        <div class="habilidad-categoria card">
+          <div class="card-header">
+            <h3>Educación</h3>
+            <span class="card-icon">🎓</span>
+          </div>
+          <div class="edu-box">
+            <p><strong>Ingeniería en Multimedia</strong></p>
+            <p class="institution">UMNG (2025)</p>
+          </div>
+          <div class="edu-box">
+            <p><strong>Google AI Essentials</strong></p>
+            <p class="institution">Coursera (2025)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    <footer class="site-footer">
+  <div class="footer-inner">
+    <h2 class="footer-title">¿Trabajamos juntos?</h2>
+    <p class="footer-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+
+    <div class="contact-row">
+      <!-- Email -->
+      <a class="contact-pill" href="mailto:danielacascavita2003@gmail.com">
+        <span class="text">danielacascavita2003@gmail.com</span>
+      </a>
+
+      <!-- Teléfono -->
+      <a class="contact-pill phone" href="tel:+573223626267">
+        <span class="text">+57 3223626267</span>
+      </a>
+
+      <!-- LinkedIn -->
+      <a class="contact-pill linkedin" 
+         href="https://www.linkedin.com/in/daniela-cascavita-mendieta/" 
+         target="_blank">
+        <span class="text">LinkedIn</span>
+      </a>
+    </div>
+
+    <p class="copyright">© 2025 Daniela Cascavita. Todos los derechos reservados.</p>
+  </div>
+</footer>
+  
+    <!-- Minimal JS to toggle mobile nav (keep) -->
+    <script>
+      const menuToggle = document.getElementById('menuToggle');
+      const mainNav = document.getElementById('mainNav');
+      menuToggle?.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+      });
+    </script>
+  
+    <!-- JS para el filtro de proyectos -->
+    <script>
+      (function() {
+        const buttons = document.querySelectorAll('.filter-btn');
+        const items = Array.from(document.querySelectorAll('.proyectos-grid > .proyecto-group'));
+        const grid = document.querySelector('.proyectos-grid');
+  
+        function setActive(button) {
+          buttons.forEach(b => b.classList.remove('active'));
+          button.classList.add('active');
+        }
+  
+        async function applyFilter(filterName) {
+          // Fade out all items
+          grid.style.opacity = '0';
+          await new Promise(r => setTimeout(r, 200));
+  
+          // Apply filter logic
+          items.forEach(it => {
+            let shouldShow = true;
+            if (filterName === 'programming') {
+              shouldShow = it.dataset.category === 'programming';
+            } else if (filterName === 'design') {
+              shouldShow = it.dataset.category === 'design';
+            }
+            it.style.display = shouldShow ? '' : 'none';
+          });
+  
+          // Fade back in
+          grid.style.opacity = '1';
+        }
+  
+        buttons.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const filter = this.dataset.filter;
+            setActive(this);
+            applyFilter(filter);
+          });
         });
-
-        // Fade back in
-        grid.style.opacity = '1';
-      }
-
-      buttons.forEach(btn => {
-        btn.addEventListener('click', function() {
-          const filter = this.dataset.filter;
-          setActive(this);
-          if (filter === 'all') {
-            applyFilter('all');
-          } else if (filter === 'programming') {
-            applyFilter('programming');
-          } else if (filter === 'design') {
-            applyFilter('design');
+      })();
+    </script>
+  
+    <!-- Smooth scroll -->
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         });
       });
-    })();
-  </script>
-
-  <!-- Modern effects and interactions -->
-  <script src="effects.js"></script>
-</body>
-</html>
+    </script>
+    <!-- Modern effects and interactions -->
+      <script src="effects.js"></script>
+  </body>
+  </html>
+  
