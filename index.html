@@ -127,16 +127,16 @@
                       </div>
                       <div class="code-content">
                         <pre><code>import tensorflow as tf
-  from keras.models import Sequential
-  
-  model = Sequential([
-    Dense(128, activation='relu'),
-    Dense(64, activation='relu'),
-    Dense(1, activation='sigmoid')
-  ])
-  
-  model.compile(optimizer='adam',
-    loss='binary_crossentropy')</code></pre>
+          from keras.models import Sequential
+          
+          model = Sequential([
+            Dense(128, activation='relu'),
+            Dense(64, activation='relu'),
+            Dense(1, activation='sigmoid')
+          ])
+          
+          model.compile(optimizer='adam',
+            loss='binary_crossentropy')</code></pre>
                       </div>
                     </div>
                     <button class="expand-code-btn" type="button">
@@ -312,17 +312,17 @@
       </section>
   
       <!-- Habilidades -->
-  <section id="habilidades">
-    <div class="decor-blur blur-1"></div>
-    <div class="decor-blur blur-2"></div>
-  
-    <div class="container">
-      <div class="skills-header">
-        <h2>Habilidades</h2>
-        <p style="color: rgba(255,255,255,0.7)">
-          Competencias <strong style="color: #93c5fd">técnicas</strong> y <strong style="color: #c084fc">profesionales</strong>
-        </p>
-      </div>
+    <section id="habilidades">
+      <div class="decor-blur blur-1"></div>
+      <div class="decor-blur blur-2"></div>
+    
+      <div class="container">
+        <div class="skills-header">
+          <h2>Habilidades</h2>
+          <p style="color: rgba(255,255,255,0.7)">
+            Competencias <strong style="color: #93c5fd">técnicas</strong> y <strong style="color: #c084fc">profesionales</strong>
+          </p>
+        </div>
   
       <div class="habilidades-grid">
         <div class="habilidad-categoria card">
@@ -363,48 +363,39 @@
           <div class="edu-box">
             <p><strong>Google AI Essentials</strong></p>
             <p class="institution">Coursera (2025)</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   
     <footer class="site-footer">
-  <div class="footer-inner">
-    <h2 class="footer-title">¿Trabajamos juntos?</h2>
-    <p class="footer-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+        <div class="footer-inner">
+          <h2 class="footer-title">¿Trabajamos juntos?</h2>
+          <p class="footer-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
 
-    <div class="contact-row">
-      <!-- Email -->
-      <a class="contact-pill" href="mailto:danielacascavita2003@gmail.com">
-        <span class="text">danielacascavita2003@gmail.com</span>
-      </a>
+          <div class="contact-row">
+            <!-- Email -->
+            <a class="contact-pill" href="mailto:danielacascavita2003@gmail.com">
+              <span class="text">danielacascavita2003@gmail.com</span>
+            </a>
 
-      <!-- Teléfono -->
-      <a class="contact-pill phone" href="tel:+573223626267">
-        <span class="text">+57 3223626267</span>
-      </a>
+            <!-- Teléfono -->
+            <a class="contact-pill phone" href="tel:+573223626267">
+              <span class="text">+57 3223626267</span>
+            </a>
 
-      <!-- LinkedIn -->
-      <a class="contact-pill linkedin" 
-         href="https://www.linkedin.com/in/daniela-cascavita-mendieta/" 
-         target="_blank">
-        <span class="text">LinkedIn</span>
-      </a>
-    </div>
+            <!-- LinkedIn -->
+            <a class="contact-pill linkedin" 
+              href="https://www.linkedin.com/in/daniela-cascavita-mendieta/" 
+              target="_blank">
+              <span class="text">LinkedIn</span>
+            </a>
+          </div>
 
-    <p class="copyright">© 2025 Daniela Cascavita. Todos los derechos reservados.</p>
-  </div>
-</footer>
-  
-    <!-- Minimal JS to toggle mobile nav (keep) -->
-    <script>
-      const menuToggle = document.getElementById('menuToggle');
-      const mainNav = document.getElementById('mainNav');
-      menuToggle?.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
-      });
-    </script>
+          <p class="copyright">© 2025 Daniela Cascavita. Todos los derechos reservados.</p>
+        </div>
+      </footer>
   
     <!-- JS para el filtro de proyectos -->
     <script>
@@ -460,6 +451,15 @@
         });
       });
     </script>
+
+    <script>
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
+
+  menuToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("open");
+  });
+</script>
     <!-- Modern effects and interactions -->
       <script src="effects.js"></script>
   </body>
