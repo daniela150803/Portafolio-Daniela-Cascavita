@@ -1873,27 +1873,36 @@ body::before {
 
   /* Ocultar navegación por defecto */
   .main-nav {
-            display: none;
-        position: fixed;
-        top: 80px;
-        right: 10px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        background: linear-gradient(180deg, rgba(0, 12, 102, 0.98) 0%, rgba(26, 0, 51, 0.98) 50%, rgba(61, 0, 102, 0.98) 100%);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        border: 2px solid rgba(168, 85, 247, 0.4);
-        border-radius: 20px;
-        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.9), 0 12px 40px rgba(107, 51, 255, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        min-width: 350px;
-        width: auto;
-        opacity: 0;
-        transform: translateY(-20px) scale(0.95);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        pointer-events: none;
-        z-index: 999;
-  }
+    display: none;
+    position: fixed;
+    top: 80px;
+    right: 5vw;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    background: linear-gradient(180deg, rgba(0, 12, 102, 0.98) 0%, rgba(26, 0, 51, 0.98) 50%, rgba(61, 0, 102, 0.98) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    border: 2px solid rgba(168, 85, 247, 0.4);
+    border-radius: 20px;
+
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.9),
+                0 12px 40px rgba(107, 51, 255, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    width: 90vw;       /* se adapta al celular */
+    max-width: 380px; /* límite en pantallas grandes */
+    min-width: unset; /* elimina el problema */
+
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    pointer-events: none;
+    z-index: 999;
+}
 
   /* Menu Activo - Cuando se hace clic en hamburguesa */
   .main-nav.active {
@@ -1963,15 +1972,6 @@ body::before {
     border-bottom-left-radius: 18px;
     border-bottom-right-radius: 18px;
   }
-  .main-nav a[href="#inicio"]::before{
-    content: "";
-  position: absolute;
-  inset: -2px -6px;   /* antes -8px -12px */
-  border-radius: 8px;
-  filter: blur(8px); /* antes 20px */
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
 
   .filter-pill {
     flex-wrap: wrap;
