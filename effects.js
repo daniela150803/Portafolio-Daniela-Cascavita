@@ -18,15 +18,17 @@ const PROJECTS_DATA = [
     tags: ['Latex', 'Chat GPT', 'Gemini', 'Python', 'TensorFlow', 'Keras'],
     badge: 'Deep Learning',
     badgeColor: 'purple',
-    image: 'img/deep_inicio.jpg',
+    image: 'ID 32-1.pdf',
     year: '2025',
-    team: 'Individual con asesoría académica',
+    team: 'En parejas con asesoría académica',
     awards: [
       'Presentado en Workshop on Engineering Applications 2025',
       'Mención destacada por innovación en detección de contenido manipulado',
       'Publicación en memorias del congreso UMNG'
     ],
     githubLink: 'https://github.com/daniela150803/Deep-Learning/blob/main/Code_Deepfakes.ipynb',
+    pdfLink: 'docs/deepFakes.pdf',
+    infografiaLink: '../Infografia_Daniela_Cascavita/index.html',
     galleryImages: [
       'img/deep1.jpg',
       'img/deep2.jpg'
@@ -86,111 +88,31 @@ print(f"Precisión final: {history.history['accuracy'][-1]:.2%}")`
     id: 2,
     category: 'programming',
     title: 'IA para hábitos saludables',
-    description: 'Uso de modelos BERT para generar recomendaciones personalizadas sobre hábitos saludables y salud mental.',
-    fullDescription: 'Sistema inteligente que utiliza modelos de procesamiento de lenguaje natural (NLP) basados en BERT para generar recomendaciones personalizadas sobre hábitos saludables y bienestar mental. El sistema analiza las consultas del usuario mediante embeddings semánticos y calcula similitud coseno con una base de datos estructurada de recomendaciones validadas por profesionales de la salud. Implementa técnicas avanzadas de NLP para comprender contexto emocional y ofrecer sugerencias contextualizadas. El proyecto integra conocimientos de salud mental, nutrición y ejercicio con tecnología de IA para promover el bienestar integral.',
-    tags: ['BERT', 'Similitud del coseno', 'NLP', 'Python', 'Transformers', 'scikit-learn'],
+    description: 'Desarrollo de una IA con NLP para seguimiento de hábitos saludables, con énfasis en el progreso del usuario.',
+    fullDescription: 'Lideré el desarrollo de una IA basada en NLP que interpreta hábitos y ofrece recomendaciones personalizadas. El sistema registra el progreso del usuario con el tiempo, permitiendo visualizar avances y ajustar sugerencias de bienestar de forma inteligente. El proyecto combina procesamiento de lenguaje natural, análisis de datos de comportamiento y retroalimentación continua para apoyar hábitos saludables.',
+    tags: ['NLP', 'Hábitos Saludables', 'Progreso', 'Python', 'Transformers', 'Liderazgo'],
     badge: 'NLP',
     badgeColor: 'pink',
     image: 'img/IA_inicio.jpg',
     year: '2024-2025',
-    team: 'Proyecto colaborativo (3 personas)',
+    team: 'Liderazgo de equipo (3 personas)',
     githubLink: 'https://github.com/daniela150803/BienestarEmocional/blob/main/BienestarEmocional.py',
-    demoLink: 'https://unimilitareduco-my.sharepoint.com/:u:/g/personal/est_maria_cascavita_unimilitar_edu_co/IQA06y9IMerCSbiySdPa2LM4AXmF2cpNGwhH2inFk2Mss60?e=UR8ZA6',
-    galleryImages: [
-      'img/ia1.jpg',
-      'img/ia2.jpg'
-    ],
-    codeSnippet: `from transformers import BertModel, BertTokenizer
-from sklearn.metrics.pairwise import cosine_similarity
-import torch
-import numpy as np
-
-# Inicializar modelo BERT preentrenado
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertModel.from_pretrained('bert-base-uncased')
-model.eval()
-
-def get_bert_embedding(text):
-    """
-    Genera el embedding BERT de un texto
-    
-    Args:
-        text (str): Texto de entrada
-        
-    Returns:
-        numpy.ndarray: Vector de embedding (768 dimensiones)
-    """
-    # Tokenizar el texto
-    inputs = tokenizer(
-        text,
-        return_tensors='pt',
-        padding=True,
-        truncation=True,
-        max_length=512
-    )
-    
-    # Generar embedding sin calcular gradientes
-    with torch.no_grad():
-        outputs = model(**inputs)
-    
-    # Usar el token [CLS] como representación del texto
-    embedding = outputs.last_hidden_state[:, 0, :].numpy()
-    return embedding
-
-def find_best_recommendation(user_query, recommendations_db):
-    """
-    Encuentra la recomendación más relevante usando similitud coseno
-    
-    Args:
-        user_query (str): Consulta del usuario
-        recommendations_db (list): Base de datos de recomendaciones
-        
-    Returns:
-        dict: Mejor recomendación con su score de similitud
-    """
-    # Obtener embedding de la consulta
-    query_embedding = get_bert_embedding(user_query)
-    
-    # Calcular similitud con cada recomendación
-    best_score = -1
-    best_recommendation = None
-    
-    for rec in recommendations_db:
-        rec_embedding = get_bert_embedding(rec['text'])
-        
-        # Calcular similitud coseno
-        similarity = cosine_similarity(query_embedding, rec_embedding)[0][0]
-        
-        if similarity > best_score:
-            best_score = similarity
-            best_recommendation = rec
-    
-    return {
-        'recommendation': best_recommendation,
-        'confidence': float(best_score),
-        'category': best_recommendation['category']
-    }
-
-# Ejemplo de uso
-user_input = "Me siento estresado y no puedo dormir bien"
-result = find_best_recommendation(user_input, health_recommendations)
-
-print(f"Recomendación: {result['recommendation']['advice']}")
-print(f"Confianza: {result['confidence']:.2%}")
-print(f"Categoría: {result['category']}")`
+    videoLink: 'videos/IA.mp4',
+    galleryImages: [],
   },
   {
     id: 3,
     category: 'design',
     title: 'Portfolio Web',
     description: 'Desarrollo de portfolio personal para mostrar proyectos y habilidades en IA y desarrollo multimedia.',
-    fullDescription: 'Portfolio web personal diseñado y desarrollado desde cero para exhibir proyectos de inteligencia artificial, deep learning y diseño multimedia. Construido con tecnologías web modernas (HTML5, CSS3, JavaScript vanilla), el sitio presenta una interfaz responsiva optimizada para desktop, tablet y móvil. Incluye secciones interactivas con animaciones suaves basadas en scroll (Intersection Observer), sistema de filtrado de proyectos con transiciones fluidas, modales informativos para cada proyecto con galería de imágenes, y un diseño visual moderno con gradientes personalizados (#000c66, #3d0066) y efectos glassmorphism. El proyecto demuestra habilidades en diseño UI/UX, desarrollo frontend, accesibilidad web (ARIA labels), rendimiento optimizado y experiencia de usuario.',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'UI/UX', 'Accessibility'],
+    fullDescription: 'Aplicación web desarrollada con HTML5, CSS3 convencional y JavaScript para el frontend, conectada a una base de datos con MyPHP. El backend completamente desarrollado en PHP maneja toda la lógica de servidor, validación de datos y conexión a la base de datos. La interfaz presenta un diseño responsivo y moderno con CSS puro, optimizado para diferentes dispositivos. Incluye funcionalidades interactivas con JavaScript vanilla, manejo seguro de formularios, y una experiencia de usuario fluida. El proyecto demuestra habilidades en desarrollo full-stack, arquitectura web, gestión de bases de datos, y buenas prácticas de seguridad en aplicaciones web.',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MyPHP', 'Base de Datos', 'Backend', 'Responsive Design', 'Full-Stack'],
     badge: 'Web Development',
     badgeColor: 'blue',
     image: 'img/web_inicio.jpg',
     year: '2025',
     team: 'Individual',
+    videoLink: 'videos/paginagym.mp4',
     demoLink: 'https://unimilitareduco-my.sharepoint.com/:v:/g/personal/est_maria_cascavita_unimilitar_edu_co/IQASnqIgIjF8ToJcuDlVISNLARBSlhcDYv1L28RvL2SMsbw?e=o9PviG&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D',
     galleryImages: [
       'img/web1.jpg',
@@ -245,21 +167,15 @@ print(f"Categoría: {result['category']}")`
       .forEach(btn => btn.classList.remove('active'));
     activeBtn.classList.add('active');
   }
-},
-
-
-// Inicializar al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-  new ProjectFilter();
-});`
+},`
   },{
   id: 4,
   category: 'design',
   title: 'Animación 3D',
   description: 'Animación 3D creada para representar una escena digital con modelado, texturizado e iluminación realista.',
-  fullDescription: 'Proyecto de animación 3D desarrollado desde cero que muestra el proceso completo de producción: modelado de objetos, aplicación de materiales y texturas, configuración de iluminación, animación de cámara y render final. La escena fue diseñada con un enfoque visual cinematográfico y composición estética. El proyecto demuestra habilidades en diseño 3D, narrativa visual, manejo de software de animación, optimización de renders y presentación audiovisual.',
+  fullDescription: 'Proyecto de animación 3D desarrollado desde cero que muestra el proceso completo de producción: modelado de objetos, aplicación de materiales y texturas, configuración de iluminación, animación de cámara y render final. La escena fue diseñada con un enfoque visual cinematográfico y composición estética. Incluye animaciones de idles realizadas con Unity integrando técnicas avanzadas de animación procedural para crear movimientos naturales y fluidos. El proyecto demuestra habilidades en diseño 3D, narrativa visual, manejo de software de animación, optimización de renders y presentación audiovisual.',
   
-  tags: ['Blender', 'Modelado 3D', 'Texturizado', 'Iluminación', 'Render', 'Animación'],
+  tags: ['Blender', 'Modelado 3D', 'Texturizado', 'Iluminación', 'Render', 'Animación', 'Unity', 'Animación Procedural'],
   
   badge: '3D Animation',
   badgeColor: 'purple',
@@ -269,20 +185,102 @@ document.addEventListener('DOMContentLoaded', () => {
   year: '2025',
   team: 'Individual',
   
-  // AQUÍ VA EL LINK DE TU VIDEO
-  demoLink: 'https://unimilitareduco-my.sharepoint.com/:v:/g/personal/est_maria_cascavita_unimilitar_edu_co/IQAMXqA6hFrwS6lJSmW6IMQEARaXhHZnfnwvxB0rGzCFIuI?e=dpIKsf&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D',
-  
+  // Video principal del proyecto
+  demoLink: 'https://unimilitareduco-my.sharepoint.com/:v:/g/personal/est_maria_cascavita_unimilitar_edu_co/IQAMXqA6hFrwS6lJSmW6IMQEARaXhHZnfnwvxB0rGzCFIuI?e=dpIKsf&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D',
+
+  videoLink: 'videos/bolsa.mp4',
+  additionalVideoLink: 'videos/Animacion SOL Y LUNA (1).mp4',
+  idleVideoLink: 'videos/Idles.mp4',
+
   galleryImages: [
     'img/animacion1.jpg'
   ],
-}
+},
+{
+  id: 5,
+  category: 'programming',
+  title: 'Juego Arcade 2D',
+  description: 'Juego arcade 2D con mecánicas de salto implementadas usando física de Euler y assets gratuitos.',
+  fullDescription: 'Juego arcade 2D desarrollado con lógica de programación avanzada, utilizando física de Euler para implementar un sistema de saltos realista y dinámico. El personaje principal responde a inputs continuos: cuanta más tiempo se mantenga presionado el botón de salto, mayor será la altura alcanzada. El proyecto implementa gestión de fuerzas, aceleración gravitacional y cálculos vectoriales para crear una experiencia de juego fluida. Utiliza assets gráficos de código abierto y demuestra habilidades en programación de sistemas de juego, manejo de física en tiempo real, y diseño de mecánicas interactivas.',
+  tags: ['Física de Euler', 'Programación de Juegos', 'Assets Gratuitos', 'Mecánicas de Juego', 'Lógica de Programación', 'Arcade', 'Juego 2D'],
+  badge: 'Game Development',
+  badgeColor: 'purple',
+  image: 'img/animacion_principal.jpg',
+  year: '2025',
+  team: 'Individual',
+  videoLink: 'videos/Juego.mp4',
+  galleryImages: [
+    'img/animacion1.jpg'
+  ],
+},
+{
+  id: 6,
+  category: 'design',
+  title: 'Render',
+  description: 'Galería de renders que muestra resultados visuales de iluminación y composición.',
+  fullDescription: 'Proyecto de renderizado que exhibe imágenes finales de escenas 3D con composición, iluminación y efectos visuales. Incluye una galería de renders representativos realizados para la presentación del portafolio.',
+  tags: ['Render', 'Iluminación', 'Composición', 'Blender', 'Visualización'],
+  badge: 'Render',
+  badgeColor: 'blue',
+  image: 'img/Render_Bosque_Depth of field (1).png',
+  year: '2025',
+  team: 'Individual',
+  videoLink: 'videos/luces.mkv',
+  galleryImages: [
+    'img/Render_Bosque_Depth of field (1).png',
+    'img/DanielaCascavitaRender3 (1).png'
+  ],
+},
+{
+  id: 7,
+  category: 'programming',
+  title: 'ARKIMIA - Juego de Realidad Aumentada',
+  description: 'Juego ARKIMIA desarrollado en Unity con ARCore para Android, destacando en manejo de servidor y creación de entornos RA.',
+  fullDescription: 'ARKIMIA es un proyecto de realidad aumentada desarrollado con Unity y ARCore, diseñado específicamente para dispositivos Android. El proyecto se centró en la implementación de un servidor robusto para la sincronización de datos entre múltiples usuarios en tiempo real, y en la creación de entornos inmersivos de realidad aumentada. Se integraron diseños gráficos de compañeros de equipo para crear una experiencia visual coherente y atractiva. Como líder del proyecto, dirigí al equipo técnico y artístico, coordinando el desarrollo desde la concepción hasta la implementación final. El proyecto fue galardonado en un concurso universitario, reconociendo la innovación tecnológica y la calidad de la experiencia de usuario.',
+  tags: ['Unity', 'ARCore', 'Android', 'Realidad Aumentada', 'Servidor', 'Liderazgo de Equipo', 'Desarrollo Móvil', 'Sincronización en Tiempo Real'],
+  badge: 'ARKIMIA',
+  badgeColor: 'green',
+  image: 'img/animacion_principal.jpg',
+  year: '2025',
+  team: 'Liderazgo de equipo (5 personas)',
+  videoLink: 'videos/ARKIMIA.mp4',
+  certificateLink: 'docs/certificado_juego.pdf',
+  galleryImages: [
+    'img/animacion1.jpg'
+  ],
+  awards: [
+    'Proyecto ganador del bloque Tecnologías Inmersivas y Videojuegos Críticos',
+    'Reconocimiento otorgado por innovación en Realidad Aumentada',
+  ]
+},
+{
+  id: 8,
+  category: 'design',
+  title: 'Modelado 3D',
+  description: 'Modelado de un carro y un robot con acabado completo desde la superficie externa hasta el interior.',
+  fullDescription: 'Proyecto de modelado 3D que combina el desarrollo detallado de un carro y un robot. El trabajo abarca desde la carrocería exterior hasta componentes internos, con atención especial al detalle en cada pieza del robot y el vehículo.',
+  tags: ['Modelado 3D', 'Blender', 'Automotriz', 'Robótica', 'Detalle'],
+  badge: 'Modelado 3D',
+  badgeColor: 'purple',
+  image: 'img/robot1.png',
+  year: '2025',
+  team: 'Individual',
+  galleryImages: [
+    'img/robot1.png',
+    'img/robot2.png',
+    'img/robot 3.png',
+    'img/robot4.png'
+  ],
+  sketchfabEmbed: `<iframe title="Ferrari 488(4)DANIELA CASCAVITA" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/66298f19d8af41d9b1e40dac811097f9/embed"></iframe>
+    <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+      <a href="https://sketchfab.com/3d-models/ferrari-4884daniela-cascavita-66298f19d8af41d9b1e40dac811097f9?utm_medium=embed&utm_campaign=share-popup&utm_content=66298f19d8af41d9b1e40dac811097f9" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Ferrari 488(4)DANIELA CASCAVITA</a> by <a href="https://sketchfab.com/est.maria.cascavita?utm_medium=embed&utm_campaign=share-popup&utm_content=66298f19d8af41d9b1e40dac811097f9" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">est.maria.cascavita</a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=66298f19d8af41d9b1e40dac811097f9" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+    </p>`,
+},
 ];
 
 // ============================================
 // 2. CONFIGURACIÓN INICIAL
 // ============================================
-// Scroll suave en toda la página
-document.documentElement.style.scrollBehavior = 'smooth';
 
 // ============================================
 // 3. SISTEMA DE MODAL DE PROYECTOS
@@ -558,6 +556,12 @@ class ProjectModal {
         height: auto;
         display: block;
       }
+      .modal-image video {
+        width: 100%;
+        height: auto;
+        display: block;
+        background: rgba(0, 0, 0, 0.1);
+      }
       .modal-code-section {
         margin: 32px 0;
       }
@@ -642,8 +646,41 @@ class ProjectModal {
       .modal-gallery-item img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+        background: rgba(0, 0, 0, 0.05);
         display: block;
+      }
+      .modal-infografia {
+        margin: 32px 0;
+      }
+      .modal-infografia-frame {
+        width: 100%;
+        min-height: 540px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 24px 54px rgba(0, 0, 0, 0.35);
+      }
+      .modal-infografia-frame iframe {
+        width: 100%;
+        min-height: 540px;
+        border: none;
+      }
+      .modal-sketchfab {
+        margin: 32px 0;
+      }
+      .modal-sketchfab iframe {
+        width: 100%;
+        min-height: 520px;
+        border: none;
+        border-radius: 20px;
+      }
+      .sketchfab-embed-wrapper {
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .sketchfab-embed-wrapper p {
+        color: rgba(255, 255, 255, 0.75);
       }
       .modal-container::-webkit-scrollbar {
         width: 12px;
@@ -689,6 +726,9 @@ class ProjectModal {
         .modal-gallery-grid {
           grid-template-columns: 1fr;
         }
+      }
+      .modal-infografia-frame {
+        min-height: 360px;
       }
     `;
     document.head.appendChild(styles);
@@ -754,8 +794,11 @@ class ProjectModal {
             <circle cx="12" cy="8" r="7"></circle>
             <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
           </svg>
-          Reconocimientos
+          Certificado
         </h3>
+        <p style="color: rgba(255, 255, 255, 0.85); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
+          Este certificado documenta el reconocimiento recibido por el proyecto ARKIMIA en el Concurso de Desarrollo de Apps UMNG 2025.
+        </p>
         <ul class="modal-awards-list">
           ${p.awards.map(award => `<li>${award}</li>`).join('')}
         </ul>
@@ -793,6 +836,42 @@ class ProjectModal {
         </div>
       </div>
     ` : '';
+
+    const infografiaHTML = p.infografiaLink ? `
+      <div class="modal-infografia">
+        <h3 class="modal-section-title">Infografía de Deep Fakes</h3>
+        <div class="modal-infografia-frame">
+          <iframe src="${p.infografiaLink}" title="Infografía Deep Fakes"></iframe>
+        </div>
+      </div>
+    ` : '';
+
+    const videoExtrasHTML = `
+      ${p.additionalVideoLink ? `
+        <div class="modal-video-info" style="margin: 16px 0; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <h3 class="modal-section-title" style="margin-bottom: 12px;">🎬 Animación SOL Y LUNA</h3>
+          <p style="color: rgba(255, 255, 255, 0.85); font-size: 0.95rem; line-height: 1.6; margin: 0 0 16px;">
+            Este recurso muestra la animación SOL Y LUNA, agregando más contexto visual al proyecto y demostrando el trabajo de producción en Unity.
+          </p>
+          <video controls style="width: 100%; border-radius: 16px; max-height: 500px; background: black;">
+            <source src="${p.additionalVideoLink}" type="video/mp4">
+            Tu navegador no soporta el elemento de video. Puedes descargarlo directamente <a href="${p.additionalVideoLink}" download style="color: #93c5fd;">aquí</a>.
+          </video>
+        </div>
+      ` : ''}
+      ${p.idleVideoLink ? `
+        <div class="modal-video-info" style="margin: 16px 0; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <h3 class="modal-section-title" style="margin-bottom: 12px;">🎬 Video Idles</h3>
+          <p style="color: rgba(255, 255, 255, 0.85); font-size: 0.95rem; line-height: 1.6; margin: 0 0 16px;">
+            Animaciones de idles desarrolladas en Unity, integrando animación procedural para generar movimientos naturales y fluidos.
+          </p>
+          <video controls style="width: 100%; border-radius: 16px; max-height: 500px; background: black;">
+            <source src="${p.idleVideoLink}" type="video/mp4">
+            Tu navegador no soporta el elemento de video. Puedes descargarlo directamente <a href="${p.idleVideoLink}" download style="color: #93c5fd;">aquí</a>.
+          </video>
+        </div>
+      ` : ''}
+    `;
 
     modalContent.innerHTML = `
       <div class="modal-header">
@@ -840,7 +919,17 @@ class ProjectModal {
               Ver en GitHub
             </a>
           ` : ''}
-          ${p.demoLink ? `
+          ${p.pdfLink ? `
+            <a href="${p.pdfLink}" download class="modal-btn modal-btn-demo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3v12"></path>
+                <path d="M8 11l4 4 4-4"></path>
+                <path d="M20 21H4"></path>
+              </svg>
+              Descargar PDF
+            </a>
+          ` : ''}
+          ${p.id === 3 || p.id === 5 ? '' : (p.demoLink ? `
             <a href="${p.demoLink}" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-demo">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -849,16 +938,57 @@ class ProjectModal {
               </svg>
               Ver Demo en Vivo
             </a>
-          ` : ''}
+          ` : '')}
         </div>
       </div>
 
-      <div class="modal-image">
-        <img src="${p.image}" alt="${p.title}" loading="lazy">
-      </div>
+      ${p.id === 8 ? '' : `<div class="modal-image">
+        ${p.videoLink ? 
+          `<video controls style="width: 100%; border-radius: 16px; max-height: 500px; background: black;">
+            <source src="${p.videoLink}">
+            Tu navegador no soporta el elemento de video. Puedes descargarlo directamente <a href="${p.videoLink}" download style="color: #93c5fd;">aquí</a>.
+          </video>` :
+          p.image && p.image.endsWith('.pdf') ? 
+          `<iframe src="${p.image}" width="100%" height="500px" style="border: none; border-radius: 16px;"></iframe>` :
+          `<img src="${p.image}" alt="${p.title}" loading="lazy">`
+        }
+        ${p.certificateLink ? `
+          <div class="modal-certificate" style="margin-top: 20px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h3 class="modal-section-title" style="margin-bottom: 12px;">🏆 Certificado de Proyecto Ganador</h3>
+            <p style="color: rgba(255, 255, 255, 0.85); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+              Certificado otorgado por la Facultad de Diseño de la Universidad Santo Tomás a María Daniela Cascavita Mendieta por su proyecto ganador ARKIMIA en el bloque Tecnologías Inmersivas y Videojuegos Críticos, dentro del I Encuentro de Semilleros de Investigación-Creación realizado el 9 de octubre de 2025 en Bogotá.
+            </p>
+            <iframe src="${p.certificateLink}" width="100%" height="360px" style="border: none; border-radius: 12px; background: #000;"></iframe>
+          </div>
+        ` : ''}
+      </div>`}
 
-      ${codeHTML}
-      ${galleryHTML}
+      ${videoExtrasHTML}
+
+      ${p.id === 3 || p.id === 5 ? '' : codeHTML}
+      ${p.id === 3 || p.id === 4 || p.id === 5 || p.id === 7 || p.id === 8 ? '' : (p.infografiaLink ? infografiaHTML : galleryHTML)}
+      ${p.id === 8 && p.sketchfabEmbed ? `
+        <div class="modal-gallery">
+          <h3 class="modal-section-title">Galería del Carro</h3>
+          <div class="modal-sketchfab">
+            <div class="sketchfab-embed-wrapper">
+              ${p.sketchfabEmbed}
+            </div>
+          </div>
+        </div>
+      ` : ''}
+      ${p.id === 8 && p.galleryImages?.length > 0 ? `
+        <div class="modal-gallery">
+          <h3 class="modal-section-title">Galería del Robot</h3>
+          <div class="modal-gallery-grid">
+            ${p.galleryImages.map((img, i) => `
+              <div class="modal-gallery-item">
+                <img src="${img}" alt="${p.title} - imagen ${i + 1}" loading="lazy">
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      ` : ''}
     `;
   }
 
@@ -1177,6 +1307,9 @@ function initPillsAnimation() {
 // 14. INICIALIZACIÓN PRINCIPAL
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
+  // Scroll suave en toda la página
+  document.documentElement.style.scrollBehavior = 'smooth';
+  
   console.log('%c🎨 Portfolio Daniela Cascavita', 'color: #a855f7; font-size: 20px; font-weight: bold;');
   console.log('%c✨ Inicializando...', 'color: #ec4899; font-size: 14px;');
 
