@@ -28,7 +28,7 @@ const PROJECTS_DATA = [
     ],
     githubLink: 'https://github.com/daniela150803/Deep-Learning/blob/main/Code_Deepfakes.ipynb',
     pdfLink: 'docs/deepFakes.pdf',
-    infografiaLink: '../Infografia_Daniela_Cascavita/index.html',
+    infografiaLink: 'Infografia_Daniela_Cascavita/index.html',
     galleryImages: [
       'img/deep1.jpg',
       'img/deep2.jpg'
