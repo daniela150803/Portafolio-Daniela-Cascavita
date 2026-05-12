@@ -23,8 +23,7 @@ const PROJECTS_DATA = [
     team: 'En parejas con asesoría académica',
     awards: [
       'Presentado en Workshop on Engineering Applications 2025',
-      'Mención destacada por innovación en detección de contenido manipulado',
-      'Publicación en memorias del congreso UMNG'
+      '<a href="https://link.springer.com/book/10.1007/978-3-032-08206-0" target="_blank" rel="noopener noreferrer" style="color: #93c5fd; text-decoration: underline; font-weight: 600;">Publicado en revista Applied Computer Sciences in Engineering 12th Workshop on Engineering Applications, WEA 2025, Cali, Colombia, October 29–31, 2025, Proceedings, Part II</a>',
     ],
     githubLink: 'https://github.com/daniela150803/Deep-Learning/blob/main/Code_Deepfakes.ipynb',
     pdfLink: 'docs/deepFakes.pdf',
@@ -796,9 +795,6 @@ class ProjectModal {
           </svg>
           Certificado
         </h3>
-        <p style="color: rgba(255, 255, 255, 0.85); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
-          Este certificado documenta el reconocimiento recibido por el proyecto ARKIMIA en el Concurso de Desarrollo de Apps UMNG 2025.
-        </p>
         <ul class="modal-awards-list">
           ${p.awards.map(award => `<li>${award}</li>`).join('')}
         </ul>
@@ -950,7 +946,9 @@ class ProjectModal {
             Tu navegador no soporta el elemento de video. Puedes descargarlo directamente <a href="${p.videoLink}" download style="color: #93c5fd;">aquí</a>.
           </video>` :
           p.image && p.image.endsWith('.pdf') ? 
-          `<iframe src="${p.image}" width="100%" height="500px" style="border: none; border-radius: 16px;"></iframe>` :
+          `<object data="${p.image}#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="500px" style="border: none; border-radius: 16px; background: #000;">
+            <p style="color: #fff; font-size: 0.95rem;">Tu navegador no puede mostrar el certificado. Actualiza el navegador o accede al proyecto desde un equipo compatible.</p>
+          </object>` :
           `<img src="${p.image}" alt="${p.title}" loading="lazy">`
         }
         ${p.certificateLink ? `
@@ -959,7 +957,9 @@ class ProjectModal {
             <p style="color: rgba(255, 255, 255, 0.85); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
               Certificado otorgado por la Facultad de Diseño de la Universidad Santo Tomás a María Daniela Cascavita Mendieta por su proyecto ganador ARKIMIA en el bloque Tecnologías Inmersivas y Videojuegos Críticos, dentro del I Encuentro de Semilleros de Investigación-Creación realizado el 9 de octubre de 2025 en Bogotá.
             </p>
-            <iframe src="${p.certificateLink}" width="100%" height="360px" style="border: none; border-radius: 12px; background: #000;"></iframe>
+            <object data="${p.certificateLink}#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="360px" style="border: none; border-radius: 12px; background: #000;">
+              <p style="color: #fff; font-size: 0.95rem;">Tu navegador no puede mostrar el certificado. Actualiza el navegador o accede al proyecto desde un equipo compatible.</p>
+            </object>
           </div>
         ` : ''}
       </div>`}
