@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Detection - Interactive Infographic</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cursor Glow Effect -->
+    <div id="cursorGlow"></div>
+
+    <!-- Floating Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Main Container -->
+    <div class="container-fluid vh-100 d-flex flex-column overflow-hidden position-relative">
+        
+        <!-- Background Gradients -->
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+
+        <!-- Header -->
+        <header class="header-section">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="main-title gradient-text" data-aos="fade-down">
+                        DEEPFAKE DETECTION
+                    </h1>
+                    <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
+                        D. Cascavita-Mendieta, A. Paez-Barajas, D. Renza · Universidad Militar Nueva Granada
+                    </p>
+                    <p class="tech-badge" data-aos="fade-up" data-aos-delay="150">
+                        MobileNetV2 + Frequency Domain + Attention Mechanism
+                    </p>
+                </div>
+                
+                <!-- Progress Indicators -->
+                <div class="d-flex align-items-center gap-2">
+                    <div class="progress-dots">
+                        <span class="dot active" data-section="0" data-bs-toggle="tooltip" title="The Challenge"></span>
+                        <span class="dot" data-section="1" data-bs-toggle="tooltip" title="Dataset"></span>
+                        <span class="dot" data-section="2" data-bs-toggle="tooltip" title="Model Pipeline"></span>
+                        <span class="dot" data-section="3" data-bs-toggle="tooltip" title="Results"></span>
+                        <span class="dot" data-section="4" data-bs-toggle="tooltip" title="Key Insights"></span>
+                    </div>
+                    <span class="section-counter">
+                        <span class="current">1</span><span class="total">/5</span>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs-nav">
+            <button class="tab-btn active" data-section="0" data-accent="#f472b6">
+                <span class="tab-emoji">⚠️</span>
+                <span class="tab-num">01</span>
+                <span class="tab-label">The Challenge</span>
+            </button>
+
+            <span class="tab-connector" aria-hidden="true">
+                <span class="tc-line"></span>
+                <span class="tc-dot"><i class="bi bi-camera-video-fill"></i></span>
+                <span class="tc-line"></span>
+            </span>
+
+            <button class="tab-btn" data-section="1" data-accent="#06b6d4">
+                <span class="tab-emoji">📊</span>
+                <span class="tab-num">02</span>
+                <span class="tab-label">Dataset</span>
+            </button>
+
+            <span class="tab-connector" aria-hidden="true">
+                <span class="tc-line"></span>
+                <span class="tc-dot"><i class="bi bi-database-fill"></i></span>
+                <span class="tc-line"></span>
+            </span>
+
+            <button class="tab-btn" data-section="2" data-accent="#a855f7">
+                <span class="tab-emoji">🧬</span>
+                <span class="tab-num">03</span>
+                <span class="tab-label">Model Pipeline</span>
+            </button>
+
+            <span class="tab-connector" aria-hidden="true">
+                <span class="tc-line"></span>
+                <span class="tc-dot"><i class="bi bi-cpu-fill"></i></span>
+                <span class="tc-line"></span>
+            </span>
+
+            <button class="tab-btn" data-section="3" data-accent="#10b981">
+                <span class="tab-emoji">✨</span>
+                <span class="tab-num">04</span>
+                <span class="tab-label">Results</span>
+            </button>
+
+            <span class="tab-connector" aria-hidden="true">
+                <span class="tc-line"></span>
+                <span class="tc-dot"><i class="bi bi-bar-chart-fill"></i></span>
+                <span class="tc-line"></span>
+            </span>
+
+            <button class="tab-btn" data-section="4" data-accent="#f59e0b">
+                <span class="tab-emoji">💡</span>
+                <span class="tab-num">05</span>
+                <span class="tab-label">Key Insights</span>
+            </button>
+        </nav>
+
+        <!-- Content Area -->
+        <main class="content-wrapper">
+            <!-- Navigation Buttons -->
+            <button class="nav-btn prev-btn" id="prevBtn" disabled>
+                <i class="bi bi-chevron-left"></i>
+            </button>
+
+            <!-- Sections Container -->
+            <div class="sections-container">
+                
+                <!-- Section 1: The Challenge -->
+                <section class="section active" id="section-0" data-aos="fade-in">
+                    <div class="section-content">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-md-6">
+                                <div class="hero-image-container" data-aos="zoom-in">
+                                    <img src="assets/hero-deepfake.png" alt="Deepfake detection visualization" class="hero-image">
+                                    <div class="hero-scanline" aria-hidden="true"></div>
+                                    <div class="hero-corner tl"></div>
+                                    <div class="hero-corner tr"></div>
+                                    <div class="hero-corner bl"></div>
+                                    <div class="hero-corner br"></div>
+                                    <div class="hero-warning-chip">
+                                        <i class="bi bi-exclamation-triangle-fill"></i>
+                                        <span>Deepfake Detected</span>
+                                    </div>
+                                    <div class="solution-badge">
+                                        <i class="bi bi-shield-check"></i> Deep Learning Solution
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="stats-grid">
+                                    <div class="stat-card" data-aos="fade-left" data-aos-delay="100">
+                                        <div class="stat-icon pink">
+                                            <i class="bi bi-people-fill"></i>
+                                        </div>
+                                        <div class="stat-value">96%</div>
+                                        <div class="stat-label">Detection needed for social media</div>
+                                    </div>
+                                    <div class="stat-card" data-aos="fade-left" data-aos-delay="200">
+                                        <div class="stat-icon cyan">
+                                            <i class="bi bi-graph-up"></i>
+                                        </div>
+                                        <div class="stat-value">500%</div>
+                                        <div class="stat-label">Increase in deepfake content (2019-2023)</div>
+                                    </div>
+                                    <div class="stat-card" data-aos="fade-left" data-aos-delay="300">
+                                        <div class="stat-icon purple">
+                                            <i class="bi bi-shield-exclamation"></i>
+                                        </div>
+                                        <div class="stat-value">$12.5M</div>
+                                        <div class="stat-label">Lost to deepfake fraud annually</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Dataset -->
+                <section class="section" id="section-1" data-aos="fade-in">
+                    <div class="section-content">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-md-4 text-center">
+                                <div class="hero-stat" data-aos="zoom-in">
+                                    <div class="circular-progress" data-percent="50">
+                                        <svg width="200" height="200">
+                                            <circle cx="100" cy="100" r="90" class="progress-bg"></circle>
+                                            <circle cx="100" cy="100" r="90" class="progress-bar" id="circularProgress1"></circle>
+                                        </svg>
+                                        <div class="progress-text">
+                                            <div class="progress-value">190K</div>
+                                            <div class="progress-label">Images</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3 text-cyan">
+                                        <small>50% Real · 50% Fake</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="dataset-card" data-aos="fade-up" data-aos-delay="100">
+                                            <div class="dataset-icon">
+                                                <i class="bi bi-database-fill-gear"></i>
+                                            </div>
+                                            <h3>Training</h3>
+                                            <div class="dataset-value">133K</div>
+                                            <div class="progress-bar-custom">
+                                                <div class="progress-fill" style="width: 70%"></div>
+                                            </div>
+                                            <small class="text-muted">70% of dataset</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="dataset-card" data-aos="fade-up" data-aos-delay="200">
+                                            <div class="dataset-icon">
+                                                <i class="bi bi-clipboard-check"></i>
+                                            </div>
+                                            <h3>Validation</h3>
+                                            <div class="dataset-value">38K</div>
+                                            <div class="progress-bar-custom">
+                                                <div class="progress-fill" style="width: 20%"></div>
+                                            </div>
+                                            <small class="text-muted">20% of dataset</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="dataset-card" data-aos="fade-up" data-aos-delay="300">
+                                            <div class="dataset-icon">
+                                                <i class="bi bi-file-earmark-bar-graph"></i>
+                                            </div>
+                                            <h3>Testing</h3>
+                                            <div class="dataset-value">19K</div>
+                                            <div class="progress-bar-custom">
+                                                <div class="progress-fill" style="width: 10%"></div>
+                                            </div>
+                                            <small class="text-muted">10% of dataset</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="info-card">
+                                        <h4><i class="bi bi-info-circle-fill"></i> Dataset Source</h4>
+                                        <p>FaceForensics++, Celeb-DF, DFDC, WildDeepfake</p>
+                                        <div class="badge-group">
+                                            <span class="badge bg-cyan">Multiple Techniques</span>
+                                            <span class="badge bg-purple">High Diversity</span>
+                                            <span class="badge bg-pink">Balanced Classes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Model Architecture — Interactive Hotspot Diagram -->
+                <section class="section" id="section-2" data-aos="fade-in">
+                    <div class="section-content">
+                        <div class="arch-diagram-wrapper">
+
+                            <!-- Hint -->
+                            <p class="arch-hint" id="archHint">
+                                <i class="bi bi-cursor-fill"></i> Click any component to explore it
+                            </p>
+
+                            <!-- Diagram + Info panel side by side -->
+                            <div class="arch-main">
+
+                                <!-- LEFT: Visual diagram -->
+                                <div class="arch-diagram">
+
+                                    <!-- Node: Input -->
+                                    <div class="arch-node node-input hotspot" data-node="input">
+                                        <div class="hotspot-pulse"></div>
+                                        <div class="node-icon"><i class="bi bi-image-fill"></i></div>
+                                        <div class="node-label">Input Image<br><small>256×256 face</small></div>
+                                    </div>
+
+                                    <!-- Connector: split -->
+                                    <div class="arch-connector connector-split">
+                                        <div class="conn-line left-line"></div>
+                                        <div class="conn-line right-line"></div>
+                                    </div>
+
+                                    <!-- Dual branch row -->
+                                    <div class="arch-branches">
+                                        <div class="arch-node node-mobilenet hotspot" data-node="mobilenet">
+                                            <div class="hotspot-pulse"></div>
+                                            <div class="node-icon"><i class="bi bi-diagram-3"></i></div>
+                                            <div class="node-label">MobileNetV2<br><small>Spatial features</small></div>
+                                        </div>
+                                        <div class="arch-node node-freq hotspot" data-node="freq">
+                                            <div class="hotspot-pulse"></div>
+                                            <div class="node-icon"><i class="bi bi-soundwave"></i></div>
+                                            <div class="node-label">FrequencyAnalyzer<br><small>FFT features</small></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Connector: merge -->
+                                    <div class="arch-connector connector-merge">
+                                        <div class="conn-line left-line"></div>
+                                        <div class="conn-line right-line"></div>
+                                    </div>
+
+                                    <!-- Node: Attention -->
+                                    <div class="arch-node node-attention hotspot" data-node="attention">
+                                        <div class="hotspot-pulse"></div>
+                                        <div class="node-icon"><i class="bi bi-eye-fill"></i></div>
+                                        <div class="node-label">Attention Module<br><small>Adaptive weighting</small></div>
+                                    </div>
+
+                                    <!-- Connector: down -->
+                                    <div class="arch-connector connector-down">
+                                        <div class="conn-line center-line"></div>
+                                    </div>
+
+                                    <!-- Node: Classification -->
+                                    <div class="arch-node node-output hotspot" data-node="output">
+                                        <div class="hotspot-pulse"></div>
+                                        <div class="node-icon"><i class="bi bi-check2-circle"></i></div>
+                                        <div class="node-label">Classification<br><small>Real · Fake</small></div>
+                                    </div>
+
+                                </div><!-- /arch-diagram -->
+
+                                <!-- RIGHT: Info panel -->
+                                <div class="arch-info-panel" id="archInfoPanel">
+                                    <div class="arch-info-default" id="archInfoDefault">
+                                        <i class="bi bi-hand-index-thumb-fill arch-idle-icon"></i>
+                                        <p>Select any component in the diagram to see a detailed description from the paper.</p>
+                                    </div>
+                                    <div class="arch-info-content" id="archInfoContent" style="display:none;">
+                                        <div class="arch-info-text">
+                                            <div class="arch-info-icon" id="archInfoIcon"></div>
+                                            <h3 id="archInfoTitle"></h3>
+                                            <span class="arch-info-tag" id="archInfoTag"></span>
+                                            <p id="archInfoBody"></p>
+                                            <div class="arch-info-badges" id="archInfoBadges"></div>
+                                        </div>
+                                        <div class="arch-info-visual" id="archInfoVisual"></div>
+                                    </div>
+                                </div>
+
+                            </div><!-- /arch-main -->
+
+                            <!-- Bottom stats bar -->
+                            <div class="architecture-stats arch-stats-bottom">
+                                <div class="arch-stat">
+                                    <i class="bi bi-cpu"></i>
+                                    <div><strong>2.4M</strong><small>Parameters</small></div>
+                                </div>
+                                <div class="arch-stat">
+                                    <i class="bi bi-hdd"></i>
+                                    <div><strong>9.24 MB</strong><small>Model size</small></div>
+                                </div>
+                                <div class="arch-stat">
+                                    <i class="bi bi-lightning-charge"></i>
+                                    <div><strong>25–41 ms</strong><small>Inference / image</small></div>
+                                </div>
+                                <div class="arch-stat">
+                                    <i class="bi bi-phone"></i>
+                                    <div><strong>Edge-ready</strong><small>Mobile &amp; embedded</small></div>
+                                </div>
+                                <div class="arch-stat">
+                                    <i class="bi bi-bar-chart-line"></i>
+                                    <div><strong>97.3%</strong><small>Validation accuracy</small></div>
+                                </div>
+                            </div>
+
+                        </div><!-- /arch-diagram-wrapper -->
+                    </div>
+                </section>
+
+                <!-- Section 4: Results -->
+                <section class="section" id="section-3" data-aos="fade-in">
+                    <div class="section-content results-wrapper">
+
+                        <!-- Row 1: KPI cards -->
+                        <div class="results-kpi-row">
+                            <div class="kpi-card kpi-accent-purple" data-aos="zoom-in" data-aos-delay="50">
+                                <div class="kpi-icon"><i class="bi bi-trophy-fill"></i></div>
+                                <div class="kpi-value" data-target="97.3" data-suffix="%">0%</div>
+                                <div class="kpi-label">Overall Accuracy</div>
+                                <div class="kpi-badge"><i class="bi bi-star-fill"></i> Best</div>
+                            </div>
+                            <div class="kpi-card kpi-accent-cyan" data-aos="zoom-in" data-aos-delay="120">
+                                <div class="kpi-icon"><i class="bi bi-bullseye"></i></div>
+                                <div class="kpi-value" data-target="96.8" data-suffix="%">0%</div>
+                                <div class="kpi-label">Precision</div>
+                            </div>
+                            <div class="kpi-card kpi-accent-pink" data-aos="zoom-in" data-aos-delay="190">
+                                <div class="kpi-icon"><i class="bi bi-broadcast"></i></div>
+                                <div class="kpi-value" data-target="97.6" data-suffix="%">0%</div>
+                                <div class="kpi-label">Recall</div>
+                            </div>
+                            <div class="kpi-card kpi-accent-green" data-aos="zoom-in" data-aos-delay="260">
+                                <div class="kpi-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                                <div class="kpi-value" data-target="97.2" data-suffix="%">0%</div>
+                                <div class="kpi-label">F1-Score</div>
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Metric bars + chart + confusion matrix -->
+                        <div class="results-mid-row">
+
+                            <!-- Left: enhanced metric bars -->
+                            <div class="results-bars-col">
+                                <p class="results-col-title"><i class="bi bi-bar-chart-steps"></i> Performance Metrics</p>
+
+                                <div class="result-metric" data-aos="fade-right" data-aos-delay="100">
+                                    <div class="rm-header">
+                                        <span class="rm-name">Accuracy</span>
+                                        <span class="rm-val rm-purple">97.3%</span>
+                                    </div>
+                                    <div class="rm-track"><div class="rm-fill rm-fill-purple" data-w="97.3"></div></div>
+                                </div>
+
+                                <div class="result-metric" data-aos="fade-right" data-aos-delay="160">
+                                    <div class="rm-header">
+                                        <span class="rm-name">Precision</span>
+                                        <span class="rm-val rm-cyan">96.8%</span>
+                                    </div>
+                                    <div class="rm-track"><div class="rm-fill rm-fill-cyan" data-w="96.8"></div></div>
+                                </div>
+
+                                <div class="result-metric" data-aos="fade-right" data-aos-delay="220">
+                                    <div class="rm-header">
+                                        <span class="rm-name">Recall</span>
+                                        <span class="rm-val rm-pink">97.6%</span>
+                                    </div>
+                                    <div class="rm-track"><div class="rm-fill rm-fill-pink" data-w="97.6"></div></div>
+                                </div>
+
+                                <div class="result-metric" data-aos="fade-right" data-aos-delay="280">
+                                    <div class="rm-header">
+                                        <span class="rm-name">F1-Score</span>
+                                        <span class="rm-val rm-green">97.2%</span>
+                                    </div>
+                                    <div class="rm-track"><div class="rm-fill rm-fill-green" data-w="97.2"></div></div>
+                                </div>
+
+                                <!-- Confusion matrix mini -->
+                                <p class="results-col-title mt-2"><i class="bi bi-grid-3x3"></i> Confusion Matrix</p>
+                                <div class="conf-matrix">
+                                    <div class="conf-cell conf-tp">
+                                        <span class="conf-val">TP</span>
+                                        <span class="conf-n">976</span>
+                                        <span class="conf-sub">Real → Real</span>
+                                    </div>
+                                    <div class="conf-cell conf-fp">
+                                        <span class="conf-val">FP</span>
+                                        <span class="conf-n">31</span>
+                                        <span class="conf-sub">Real → Fake</span>
+                                    </div>
+                                    <div class="conf-cell conf-fn">
+                                        <span class="conf-val">FN</span>
+                                        <span class="conf-n">24</span>
+                                        <span class="conf-sub">Fake → Real</span>
+                                    </div>
+                                    <div class="conf-cell conf-tn">
+                                        <span class="conf-val">TN</span>
+                                        <span class="conf-n">969</span>
+                                        <span class="conf-sub">Fake → Fake</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: comparison chart -->
+                            <div class="results-chart-col">
+                                <p class="results-col-title"><i class="bi bi-bar-chart-fill"></i> Model Comparison</p>
+                                <div class="chart-container">
+                                    <canvas id="comparisonChart"></canvas>
+                                </div>
+                                <!-- Per-model badges -->
+                                <div class="model-compare-badges">
+                                    <div class="mc-badge mc-base">
+                                        <span class="mc-name">Baseline CNN</span>
+                                        <span class="mc-score">89.2%</span>
+                                    </div>
+                                    <div class="mc-badge mc-resnet">
+                                        <span class="mc-name">ResNet-50</span>
+                                        <span class="mc-score">94.8%</span>
+                                    </div>
+                                    <div class="mc-badge mc-ours">
+                                        <span class="mc-name">Ours (MobileNetV2)</span>
+                                        <span class="mc-score">97.3% ✦</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Section 5: Key Insights -->
+                <section class="section" id="section-4" data-aos="fade-in">
+                    <div class="section-content">
+                        <div class="insights-hero text-center mb-5" data-aos="zoom-in">
+                            <h2 class="gradient-text display-4 mb-3">
+                                <span id="typewriterText"></span><span class="cursor-blink">|</span>
+                            </h2>
+                            <p class="lead text-light-gray">MobileNetV2 achieves SOTA with 97.3% accuracy</p>
+                        </div>
+
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <div class="insight-card" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="insight-icon purple">
+                                        <i class="bi bi-speedometer2"></i>
+                                    </div>
+                                    <h3>Lightweight & Fast</h3>
+                                    <p>MobileNetV2 reduces parameters by 60% vs ResNet while maintaining accuracy</p>
+                                    <div class="insight-tags">
+                                        <span class="tag">Efficient</span>
+                                        <span class="tag">Mobile-Ready</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="insight-card" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="insight-icon cyan">
+                                        <i class="bi bi-bezier2"></i>
+                                    </div>
+                                    <h3>Frequency Domain</h3>
+                                    <p>DCT analysis reveals subtle artifacts invisible in spatial domain</p>
+                                    <div class="insight-tags">
+                                        <span class="tag">DCT Transform</span>
+                                        <span class="tag">Artifact Detection</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="insight-card" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="insight-icon pink">
+                                        <i class="bi bi-eye-fill"></i>
+                                    </div>
+                                    <h3>Attention Mechanism</h3>
+                                    <p>Focus on critical regions (eyes, mouth) improves detection by 4.2%</p>
+                                    <div class="insight-tags">
+                                        <span class="tag">Spatial Attention</span>
+                                        <span class="tag">+4.2%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="insight-card" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="insight-icon green">
+                                        <i class="bi bi-graph-up-arrow"></i>
+                                    </div>
+                                    <h3>Generalization</h3>
+                                    <p>Strong performance across multiple deepfake techniques and datasets</p>
+                                    <div class="insight-tags">
+                                        <span class="tag">Cross-Dataset</span>
+                                        <span class="tag">Robust</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="next-steps" data-aos="fade-up" data-aos-delay="500">
+                            <h3 class="text-center mb-4"><i class="bi bi-compass"></i> Future Directions</h3>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="next-step">
+                                        <span class="step-num">1</span>
+                                        <span class="step-text">Real-time video detection</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="next-step">
+                                        <span class="step-num">2</span>
+                                        <span class="step-text">Cross-domain adaptation</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="next-step">
+                                        <span class="step-num">3</span>
+                                        <span class="step-text">Explainable AI integration</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conclusion-banner mt-4" data-aos="zoom-in" data-aos-delay="600">
+                            <i class="bi bi-award-fill"></i>
+                            <strong>Conclusion:</strong> MobileNetV2 + Frequency Analysis + Attention = Efficient &amp; Accurate Deepfake Detection
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <button class="nav-btn next-btn" id="nextBtn">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </main>
+
+    </div>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
