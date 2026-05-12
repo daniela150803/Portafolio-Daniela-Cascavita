@@ -28,7 +28,7 @@ const PROJECTS_DATA = [
     ],
     githubLink: 'https://github.com/daniela150803/Deep-Learning/blob/main/Code_Deepfakes.ipynb',
     pdfLink: 'docs/deepFakes.pdf',
-    infografiaLink: 'Infografia_Daniela_Cascavita/index.html',
+    infografiaLink: './Infografia_Daniela_Cascavita/index.html',
     galleryImages: [
       'img/deep1.jpg',
       'img/deep2.jpg'
@@ -837,11 +837,12 @@ class ProjectModal {
       </div>
     ` : '';
 
-    const infografiaHTML = p.infografiaLink ? `
+    const infografiaLink = p.infografiaLink ? new URL(p.infografiaLink, window.location.href).href : '';
+    const infografiaHTML = infografiaLink ? `
       <div class="modal-infografia">
         <h3 class="modal-section-title">Infografía de Deep Fakes</h3>
         <div class="modal-infografia-frame">
-          <iframe src="${p.infografiaLink}" title="Infografía Deep Fakes"></iframe>
+          <iframe src="${infografiaLink}" title="Infografía Deep Fakes"></iframe>
         </div>
       </div>
     ` : '';
